@@ -141,6 +141,11 @@ void testApp::setup(){
     gui->loadSettings("GUI/guiSettings.xml");
     
     
+    doShowColorbars = false;
+    imageColorBars.loadImage("ColorBars.tif");
+
+    
+    
 }
 //------------------------------------------------------------
 bool testApp::setMode(ModeName newMode) {
@@ -373,7 +378,15 @@ void testApp::draw(){
     // TODO: display video time in gui
     ofSetColor(255, 255, 255);
     ofEnableAlphaBlending();
-    if (mbMainVideo) mainVideo.draw(0, 0);
+    if (mbMainVideo) {
+        mainVideo.draw(0, 0);
+    }
+    
+    if(doShowColorbars) {
+        ofDisableAlphaBlending();
+        ofSetColor(255, 255, 255);
+        imageColorBars.draw(0, 0);
+    }
 
     glPopMatrix();
     
@@ -405,6 +418,12 @@ void testApp::tuioRemoved(ofxTuioCursor &tuioCursor){
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
      cout << "testApp::keyPressed key: " << key << endl;
+    switch(key) {
+        case 'c':
+            doShowColorbars ^= true;
+            break;
+    }
+    
     if (key == 9) gui->toggleVisible();
     if (key == 102) ofToggleFullscreen();
     if (key == 109) mbShowCursor = !mbShowCursor;

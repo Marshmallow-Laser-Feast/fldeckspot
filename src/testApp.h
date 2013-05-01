@@ -63,6 +63,8 @@ public:
     vizMoviePlayer* moviePlayerViz;
     
     ofVideoPlayer mainVideo;
+    bool doShowColorbars;
+    ofImage imageColorBars;
     
     //ofxImageSequenceRecorder ImageRecorder;
     ofImage img;
