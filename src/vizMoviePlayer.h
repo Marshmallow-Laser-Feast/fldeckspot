@@ -47,6 +47,9 @@ public:
     float gridHeight = 800;
     float mReactionRadius;
     
+    bool mbFirstRun;
+    
+    
     vector<pair<int, int> > mTunePositions;
     vector<pair<int, int> > mBeatsPositions;
 

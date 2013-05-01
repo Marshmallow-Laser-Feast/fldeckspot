@@ -153,7 +153,7 @@ void vizMoviePlayer::setup(){
         dot->setup(i);
         dot->setHome(ofVec3f(mBeatsPositions.at(i).first, mBeatsPositions.at(i).second, 0));
         dot->setVideo( nikeBeatsDir.getPath(i));
-        //dot->pauseVideo();
+        dot->playVideo();
         nikeBeatsVideos.push_back(dot);
     }
         
@@ -162,7 +162,7 @@ void vizMoviePlayer::setup(){
         dot->setup(i);
         dot->setHome(ofVec3f(mBeatsPositions.at(i).first, mBeatsPositions.at(i).second, 0));
         dot->setVideo( adidasBeatsDir.getPath(i));
-        //dot->pauseVideo();
+        dot->playVideo();
         adidasBeatsVideos.push_back(dot);
     }
     
@@ -171,7 +171,7 @@ void vizMoviePlayer::setup(){
         dot->setup(i);
         dot->setHome(ofVec3f(mTunePositions.at(i).first, mTunePositions.at(i).second, 0));
         dot->setVideo( nikeTuneDir.getPath(int(ofRandom(mNumVideos))));
-        //dot->pauseVideo();
+        dot->playVideo();
         nikeTuneVideos.push_back(dot);
     }
         
@@ -180,17 +180,17 @@ void vizMoviePlayer::setup(){
         dot->setup(i);
         dot->setHome(ofVec3f(mTunePositions.at(i).first, mTunePositions.at(i).second, 0));
         dot->setVideo( converseTuneDir.getPath(int(ofRandom(mNumVideos))));
-        //dot->pauseVideo();
+        dot->playVideo();
         converseTuneVideos.push_back(dot);
     }
     
 
-    mOverlayMovie =  new ofVideoPlayer();
-    mOverlayMovie->setPixelFormat(OF_PIXELS_RGBA);
+    //mOverlayMovie =  new ofVideoPlayer();
+    //mOverlayMovie->setPixelFormat(OF_PIXELS_RGBA);
    // mOverlayMovie->setLoopState(<#ofLoopType state#>)
-    mOverlayMovie->loadMovie("overlay/Nike_Tune_Centre_001_loop.mov");
-    mOverlayMovie->play();
-    
+    //mOverlayMovie->loadMovie("overlay/Nike_Tune_Centre_001_loop.mov");
+    //mOverlayMovie->play();
+    mbFirstRun = true;
     
 }
 
@@ -199,7 +199,7 @@ void vizMoviePlayer::setup(){
 void vizMoviePlayer::update() {
     mSelectedPreset = int(mSelectedPreset);
     
-    if (mOverlayMovie->isLoaded()) mOverlayMovie->update();
+    //if (mOverlayMovie->isLoaded()) mOverlayMovie->update();
     
     videoHeight = videoWidth;
 
@@ -585,7 +585,7 @@ void vizMoviePlayer::draw(){
     }
 
         
-    if (mOverlayMovie->isLoaded()) mOverlayMovie -> draw(640-mOverlayMovie->width/2,540-mOverlayMovie->height/2);
+    //if (mOverlayMovie->isLoaded()) mOverlayMovie -> draw(640-mOverlayMovie->width/2,540-mOverlayMovie->height/2);
     ofDisableAlphaBlending();
    
     if (mbBlendModeAdd) ofDisableBlendMode();
@@ -696,7 +696,7 @@ void vizMoviePlayer::guiEvent(ofxUIEventArgs &e){
 //--------------------------------------------------------------
 void vizMoviePlayer::exit() {
     ofLogNotice() << "vizMoviePlayer::exit()" << endl;
-    delete mOverlayMovie;
+    //delete mOverlayMovie;
     gui->saveSettings(mXmlPath);
     delete gui;
 }

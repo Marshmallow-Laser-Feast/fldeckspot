@@ -533,13 +533,12 @@ void vizPhysics::drawCopy(){
         cam.end();
     }
     
-    //
 }
 //--------------------------------------------------------------
 void vizPhysics::setTextureRef(ofTexture* tex){
     texRef = tex;
 }
-
+//--------------------------------------------------------------
 void vizPhysics::loadSettings (int id){
     
     
@@ -711,7 +710,7 @@ void vizPhysics::drawMesh () {
             float factorLT = lt->getVelocity().length()*.2*mPulseIntensity;
             ofColor colLT =  mVertexColor - mPulseColor*factorLT;
             
-            if (x==15 && y == 15) cout << "factor LT: " << factorLT << endl;
+            //if (x==15 && y == 15) cout << "factor LT: " << factorLT << endl;
             
         
 
