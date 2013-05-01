@@ -615,33 +615,53 @@ void vizConverse::addOutsideForce(ofVec3f target, float intensity, float range) 
         msa::physics::Particle3D*pTop = topParticles.at(i);
         //msa::physics::Spring3D *s = outsideSprings.at(i);
         
-        projPos = ofVec3f(p->getPosition().x, 0, p->getPosition().z);
+        projPos = ofVec3f(p->getPosition().x, 0, p->getPosition().z);   // particles projected pos
+        ofVec3f particleToTarget = target - projPos;
         
-        if (mbToggleShape){
-            //cout << "addOutsideForce: projPos: " << projPos << endl;
-            if (pTop->getPosition().distanceSquared(center->getPosition()) < target.distanceSquared(center->getPosition()) ){
-                dif = center->getPosition()-projPos;
-            } else {
-                dif = projPos-center->getPosition();
+        // if target is close enough to particle
+        if(particleToTarget.lengthSquared() < range * range) {
+
+            ofVec3f diff = target - center->getPosition();  // from center to target
+            
+            float radius2 = (center->getPosition() - projPos).lengthSquared();
+            if(diff.lengthSquared() < radius2) {
+                diff *= -1;
             }
-        }else {
-            dif = ofVec3f(p->getPosition().x-mouseX, 0, 0);
+            diff *= 0.01;
+//            diff.normalize();       // normalized vector
+            
+            p->addVelocity(diff*intensity);
+
+//            ofVec3f pointOnCircle = center->getPosition() + mRadius * diff;
         }
         
-        difNorm = dif.getNormalized();
-        //cout << "addOutsideForce: projPos: " << projPos << " target: " << target << endl;
-        targetDif = target - projPos;
-        float dist = targetDif.length();
-        cout << "addOutsideForce: dist: " << dist << endl;
-        if ( dist < range) {
+        
+        
+//        if (mbToggleShape){
+//            //cout << "addOutsideForce: projPos: " << projPos << endl;
+//            if (pTop->getPosition().distanceSquared(center->getPosition()) < target.distanceSquared(center->getPosition()) ){
+//                dif = center->getPosition()-projPos;
+//            } else {
+//                dif = projPos-center->getPosition();
+//            }
+//        }else {
+//            dif = ofVec3f(p->getPosition().x-mouseX, 0, 0);
+//        }
+        
+//        difNorm = dif.getNormalized();
+//        //cout << "addOutsideForce: projPos: " << projPos << " target: " << target << endl;
+//        targetDif = target - projPos;
+//        float dist = targetDif.length();
+//        cout << "addOutsideForce: dist: " << dist << endl;
+//        if ( dist < range) {
             //cout << "found close particles! projPos: "<< projPos <<" id: "  << i << " force: " << difNorm*intensity << endl;
-            p->addVelocity(difNorm*intensity);
+//            p->addVelocity(difNorm*intensity);
             //p->addVelocity(ofVec3f(3,0,0));
-            counter ++;
+//            counter ++;
            
-        }
+//        }
     }
-    if (counter == 0)  cout << "vizConverse::addOutsideForcenot in range" << endl;
+//    if (counter == 0)  cout << "vizConverse::addOutsideForcenot in range" << endl;
     
 }
 //--------------------------------------------------------------
