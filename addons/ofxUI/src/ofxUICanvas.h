@@ -528,7 +528,7 @@ public:
 	//App Callbacks
     void enableAppEventCallbacks()
     {
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
         ofAddListener(ofEvents().update, this, &ofxUICanvas::onUpdate);
         ofAddListener(ofEvents().draw, this, &ofxUICanvas::onDraw);
         ofAddListener(ofEvents().exit, this, &ofxUICanvas::onExit);
@@ -542,7 +542,7 @@ public:
 	//App Callbacks
     void disableAppEventCallbacks()
     {
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
         ofRemoveListener(ofEvents().update, this, &ofxUICanvas::onUpdate);
         ofRemoveListener(ofEvents().draw, this, &ofxUICanvas::onDraw);
         ofRemoveListener(ofEvents().exit, this, &ofxUICanvas::onExit);
@@ -558,7 +558,7 @@ public:
 	//Touch Callbacks
     void enableTouchEventCallbacks()
     {
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
         ofAddListener(ofEvents().touchUp, this, &ofxUICanvas::onTouchUp);
         ofAddListener(ofEvents().touchDown, this, &ofxUICanvas::onTouchDown);
         ofAddListener(ofEvents().touchMoved, this, &ofxUICanvas::onTouchMoved);
@@ -575,7 +575,7 @@ public:
 
 	void disableTouchEventCallbacks()
     {
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
         ofRemoveListener(ofEvents().touchUp, this, &ofxUICanvas::onTouchUp);
         ofRemoveListener(ofEvents().touchDown, this, &ofxUICanvas::onTouchDown);
         ofRemoveListener(ofEvents().touchMoved, this, &ofxUICanvas::onTouchMoved);
@@ -595,7 +595,7 @@ public:
 	//Mouse Callbacks
     void enableMouseEventCallbacks()
     {
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
         ofAddListener(ofEvents().mouseReleased, this, &ofxUICanvas::onMouseReleased);
         ofAddListener(ofEvents().mousePressed, this, &ofxUICanvas::onMousePressed);
         ofAddListener(ofEvents().mouseMoved, this, &ofxUICanvas::onMouseMoved);
@@ -611,7 +611,7 @@ public:
 	//Mouse Callbacks
     void disableMouseEventCallbacks()
     {
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
         ofRemoveListener(ofEvents().mouseReleased, this, &ofxUICanvas::onMouseReleased);
         ofRemoveListener(ofEvents().mousePressed, this, &ofxUICanvas::onMousePressed);
         ofRemoveListener(ofEvents().mouseMoved, this, &ofxUICanvas::onMouseMoved);
@@ -627,8 +627,8 @@ public:
     //Window Resize Callback
     void enableWindowEventCallbacks()
     {
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
-        ofAddListener(ofEvents().windowResized, this, &ofxUICanvas::onWindowResized);        
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
+        ofAddListener(ofEvents().windowResized, this, &ofxUICanvas::onWindowResized);
 #else
         ofAddListener(ofEvents.windowResized, this, &ofxUICanvas::onWindowResized);        
 #endif
@@ -637,8 +637,8 @@ public:
 	//Window Resize Callback
     void disableWindowEventCallbacks()
     {
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
-        ofRemoveListener(ofEvents().windowResized, this, &ofxUICanvas::onWindowResized);        
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
+        ofRemoveListener(ofEvents().windowResized, this, &ofxUICanvas::onWindowResized);
 #else
         ofRemoveListener(ofEvents.windowResized, this, &ofxUICanvas::onWindowResized);        
 #endif
@@ -650,7 +650,7 @@ public:
     //KeyBoard Callbacks
 	void enableKeyEventCallbacks()
 	{
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
 		ofAddListener(ofEvents().keyPressed, this, &ofxUICanvas::onKeyPressed);
 		ofAddListener(ofEvents().keyReleased, this, &ofxUICanvas::onKeyReleased);
 #else
@@ -662,7 +662,7 @@ public:
 	//KeyBoard Callbacks
 	void disableKeyEventCallbacks()
 	{
-#if OF_VERSION >= 7 && OF_VERSION_MINOR > 0
+#if (OF_VERSION >= 7 || OF_VERSION_MAJOR >= 0) && OF_VERSION_MINOR > 0
 		ofRemoveListener(ofEvents().keyPressed, this, &ofxUICanvas::onKeyPressed);
 		ofRemoveListener(ofEvents().keyReleased, this, &ofxUICanvas::onKeyReleased);
 #else
