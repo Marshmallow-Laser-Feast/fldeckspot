@@ -312,16 +312,9 @@ void testApp::update(){
     mCurrentColor = mCurrentColor.lerp(mTargetColor, 0.1);  // TODO: make this number a GUI variable
     ofLogNotice() << mCurrentColor;
     
-<<<<<<< HEAD
     midiOut.sendControlChange(1, 1, mCurrentColor.r / 2);
     midiOut.sendControlChange(1, 2, mCurrentColor.g / 2);
     midiOut.sendControlChange(1, 3, mCurrentColor.b / 2);
-=======
-
-    midiOut.sendControlChange(1, 1, mCurrentColor.r);
-    midiOut.sendControlChange(1, 2, mCurrentColor.g);
-    midiOut.sendControlChange(1, 3, mCurrentColor.b);
->>>>>>> main scene control ui now gets updated
     //  - - - - - - - - - - OFX UI - - - - - - - - - - - - - - - - -
     mg->addPoint(ofGetFrameRate());
         
