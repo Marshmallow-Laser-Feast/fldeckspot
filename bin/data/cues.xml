@@ -1,0 +1,21 @@
+<Scene>
+    <cue>0</cue>
+    <cue>250</cue>
+    <cue>588</cue>
+    <cue>1065</cue>
+    <cue>1299</cue>
+    <cue>1536</cue>
+    <cue>1742</cue>
+    <cue>2350</cue>
+    <cue>100000000000</cue>
+</Scene>
+
+<Lighting>
+    <cue>0</cue>
+    <cue>588</cue>
+    <cue>1299</cue>
+    <cue>1742</cue>
+    <cue>2000</cue>
+    <cue>2350</cue>
+    <cue>100000000000</cue>
+</Lighting>

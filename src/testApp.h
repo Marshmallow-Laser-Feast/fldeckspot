@@ -80,7 +80,8 @@ public:
     // - - --  LED
     bool setLEDColor(ofColor color);
     ofColor mStartColor, mAdidasColor, mConverseColor, mNikeColor, mCurrentColor, mEndColor, mTargetColor;
-    int  mLEDCues [6] = {0, 588, 1299, 1742, 2000, 2350};
+//    int  mLEDCues [6] = {0, 588, 1299, 1742, 2000, 2350};
+    vector<int> mLEDCues;
     
     
     //- - - - - - - MIDI
@@ -93,7 +94,8 @@ public:
     //- - - - - - - SCENE RUNNER
     bool mbMainVideo;
     int  mMovieLength = 2300;
-    int  mRanges [9] = {0,250, 588, 1065, 1299, 1536, 1742, 2350, mMovieLength};
+//    int  mRanges [9] = {0,250, 588, 1065, 1299, 1536, 1742, 2350, mMovieLength};
+    vector<int> mSceneCues;
    
     OutputManager outputManager;
     

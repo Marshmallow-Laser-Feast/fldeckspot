@@ -120,6 +120,7 @@
 		9f7986dc4eb05e75fce2c777500fdc01 /* ofxOscSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscSender.h; path = ../../../addons/ofxOsc/src/ofxOscSender.h; sourceTree = SOURCE_ROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		BBC09E4A1731838800911A04 /* OutputManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputManager.h; sourceTree = "<group>"; };
+		BBC09E4C1731A46700911A04 /* cues.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = cues.xml; path = bin/data/cues.xml; sourceTree = SOURCE_ROOT; };
 		C610DEB7172A9CF500CF728B /* vizConverse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vizConverse.cpp; sourceTree = "<group>"; };
 		C610DEB8172A9CF500CF728B /* vizConverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vizConverse.h; sourceTree = "<group>"; };
 		C6123260172922F8008B6398 /* vizDots.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vizDots.cpp; sourceTree = "<group>"; };
@@ -686,6 +687,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				BBC09E4C1731A46700911A04 /* cues.xml */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,

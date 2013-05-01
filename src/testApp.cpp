@@ -18,13 +18,42 @@ void testApp::setup(){
     
     // - - - - - - - - - - TWEENZOR SETUP - - - - - - - - -  - - - - -
 	Tweenzor::init();
+    
     // - - - - - - - - - - TUIO SETUP - - - - - - - - -  - - - - -
     tuioClient.start(3333);
     ofAddListener(tuioClient.cursorAdded,this,&testApp::tuioAdded);
 	ofAddListener(tuioClient.cursorRemoved,this,&testApp::tuioRemoved);
 	ofAddListener(tuioClient.cursorUpdated,this,&testApp::tuioUpdated);
+
+    
+    // - - - - - - - - - - CUES - - - - - - - - -  - - - - -
+    {
+        ofxXmlSettings xml("cues.xml");
+        {
+            string s = "Scene";
+            xml.pushTag(s);
+            int numCues = xml.getNumTags("cue");
+            ofLogNotice() << "Loading " << numCues << " " << s << " cues";
+            for(int i=0; i<numCues; i++) {
+                mSceneCues.push_back(xml.getValue("cue", -1, i));
+            }
+            xml.popTag();
+        }
+        
+        {
+            string s = "Lighting";
+            xml.pushTag(s);
+            int numCues = xml.getNumTags("cue");
+            ofLogNotice() << "Loading " << numCues << " Lighting cues";
+            for(int i=0; i<numCues; i++) {
+                mLEDCues.push_back(xml.getValue("cue", -1, i));
+            }
+            xml.popTag();
+        }
+    }
     
     
+    // - - - - - - - - - - OUTPUT MANAGER SETUP - - - - - - - - -  - - - - -
     outputManager.setup(2, 1280, 1080, GL_RGBA, 4);
     outputManager.outputs[0].rect.set(0, 0, 1280, 1080);
     outputManager.outputs[1].rect.set(1280, 0, 1280/10, 1080/10);
@@ -300,12 +329,12 @@ void testApp::update(){
         mCurrentFrame = mainVideo.getCurrentFrame();
         if (mainVideo.isPlaying())   movieSlider->setValue(mCurrentFrame);
         
-        if     (ofInRange(mCurrentFrame, mRanges[1], mRanges[2])) setMode(kModeNikeBeats);
-        else if(ofInRange(mCurrentFrame, mRanges[2], mRanges[3])) setMode(kModeNikeTune);
-        else if(ofInRange(mCurrentFrame, mRanges[3], mRanges[4])) setMode(kModeConverseTune);
-        else if(ofInRange(mCurrentFrame, mRanges[4], mRanges[5])) setMode(kModeConverseFX);
-        else if(ofInRange(mCurrentFrame, mRanges[5], mRanges[6])) setMode(kModeAdidasBeats);
-        else if(ofInRange(mCurrentFrame, mRanges[6], mRanges[7])) setMode(kModeAdidasFX);
+        if     (ofInRange(mCurrentFrame, mSceneCues[1], mSceneCues[2])) setMode(kModeNikeBeats);
+        else if(ofInRange(mCurrentFrame, mSceneCues[2], mSceneCues[3])) setMode(kModeNikeTune);
+        else if(ofInRange(mCurrentFrame, mSceneCues[3], mSceneCues[4])) setMode(kModeConverseTune);
+        else if(ofInRange(mCurrentFrame, mSceneCues[4], mSceneCues[5])) setMode(kModeConverseFX);
+        else if(ofInRange(mCurrentFrame, mSceneCues[5], mSceneCues[6])) setMode(kModeAdidasBeats);
+        else if(ofInRange(mCurrentFrame, mSceneCues[6], mSceneCues[7])) setMode(kModeAdidasFX);
     }
     
     //  - - - - - - - - - - LEDS - - - - - - - - - - - - - - - - -
