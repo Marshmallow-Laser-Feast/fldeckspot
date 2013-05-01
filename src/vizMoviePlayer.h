@@ -37,6 +37,7 @@ public:
     void update(list<ofxTuioCursor*> cursors);
     void toggleInput(bool b);
     void buildGrid();
+    void loadSettings (int id);
     // - - - - - - BASE GUI
     int _id;
         

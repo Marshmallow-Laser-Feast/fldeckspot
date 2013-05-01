@@ -160,7 +160,7 @@ bool testApp::setMode(ModeName newMode) {
         switch(mCurrentMode) {
             case kModeNikeBeats:
                 //movieplayer - load movie grid;
-               
+                moviePlayerViz->loadSettings(10);
                 mbToggleMoviePlayer = true;
                 
                 mbToggleDots = false;
@@ -171,7 +171,9 @@ bool testApp::setMode(ModeName newMode) {
                 break;
             case kModeNikeTune:
                 //movieplayer + physics - load yellow buttons
-                 physicsViz->loadSettings(10);
+                physicsViz->loadSettings(1);
+                moviePlayerViz->loadSettings(1);
+                
                 mbToggleMoviePlayer = true;
                 mbTogglePhysics = true;
                 
@@ -182,6 +184,7 @@ bool testApp::setMode(ModeName newMode) {
                 break;
             case kModeConverseTune:
                 //movieplayer + physics - load red buttons
+                moviePlayerViz->loadSettings(1);
                 physicsViz->loadSettings(10);
                 mbTogglePhysics = true;
                 mbToggleMoviePlayer = true;
@@ -194,7 +197,8 @@ bool testApp::setMode(ModeName newMode) {
                 
                 
             case kModeConverseFX:
-                
+                moviePlayerViz->loadSettings(1);
+
                 //load circular setting
                 mbToggleConverse = true;
                 converseViz->loadSettings(3);

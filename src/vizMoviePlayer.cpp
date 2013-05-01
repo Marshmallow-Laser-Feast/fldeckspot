@@ -193,8 +193,6 @@ void vizMoviePlayer::setup(){
     mbFirstRun = true;
     
 }
-
-
 //--------------------------------------------------------------
 void vizMoviePlayer::update() {
     mSelectedPreset = int(mSelectedPreset);
@@ -256,8 +254,8 @@ void vizMoviePlayer::update() {
             break;
         default:
             break;
-    }}
-    
+    }
+}
 //--------------------------------------------------------------
 void vizMoviePlayer::update( list<ofxTuioCursor*> cursors) {
    
@@ -414,7 +412,6 @@ void vizMoviePlayer::update( list<ofxTuioCursor*> cursors) {
     }
 
 }
-
 //--------------------------------------------------------------
 void vizMoviePlayer::update(ofVec3f t) {
     
@@ -592,7 +589,6 @@ void vizMoviePlayer::draw(){
     ofPopStyle();
     ofPopMatrix();
 }
-
 //--------------------------------------------------------------
 void vizMoviePlayer::keyPressed(int key) {
     ofLogNotice() << mVizIdName << ":: keyPressed:" << key << " _id: " << _id <<endl;
@@ -680,19 +676,17 @@ void vizMoviePlayer::guiEvent(ofxUIEventArgs &e){
         }
     }
 }
-//- - - - - - - 
-
 //--------------------------------------------------------------
-//bool vizMoviePlayer::setMode(ModeName newMode) {
-//    if(mCurrentMode != newMode) {
-//        
-//        ofLogNotice() << " vizMoviePlayer: MODE SWITCH: mCurrentMode: " << mCurrentMode << " " << " new Mode: " << newMode << endl;
-//        mCurrentMode = newMode;
-//        return true;
-//    }
-//    return false;
-//}
-
+void vizMoviePlayer::loadSettings (int id){
+    char selectedPreset [32];
+    char selectedPresetPath [32];
+    sprintf (selectedPreset, "%s%i", mVizName, id);
+    sprintf(selectedPresetPath, "GUI/%s.xml", selectedPreset);
+        
+    ofLogNotice() << mVizIdName << "guiEvent:: loadSettings:" << selectedPresetPath << endl;
+   
+    gui->loadSettings(selectedPresetPath);
+}
 //--------------------------------------------------------------
 void vizMoviePlayer::exit() {
     ofLogNotice() << "vizMoviePlayer::exit()" << endl;
