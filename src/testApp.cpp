@@ -106,7 +106,7 @@ void testApp::setup(){
     
 
     mainVideo.setPixelFormat(OF_PIXELS_RGBA);
-    mainVideo.loadMovie("Square_Output_Master_Edit_001.mov");
+    mainVideo.loadMovie("master overlay/Square_Output_Master_Edit_001.mov");
     mainVideo.setLoopState(OF_LOOP_NONE);
     
     // - - - - - - MOVIE GRABBING - - - - - - -
