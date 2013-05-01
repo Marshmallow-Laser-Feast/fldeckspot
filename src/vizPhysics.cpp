@@ -198,7 +198,7 @@ void vizPhysics::setup(){
 	shader.load("vert.glsl", "frag.glsl");
     
     
-    image.loadImage("textures/tex10.png");  // dots
+    image.loadImage("textures/tex113.png");  // dots
     image2.loadImage("textures/tex07.png"); //stripes
     //mOverLay.loadImage("overlay/Nike_Tune_Comp_001 (00003).png");
 	
@@ -708,7 +708,13 @@ void vizPhysics::drawMesh () {
             //left top
             msa::physics::Particle3D *lt = particles[i];
             ofVec3f posLT = lt->getPosition();
-            // ofColor colLT = mVertexColor/255.0 - lt->getVelocity().length()*mPulseIntensity*mPulseColor;
+            float factorLT = lt->getVelocity().length()*.2*mPulseIntensity;
+            ofColor colLT =  mVertexColor - mPulseColor*factorLT;
+            
+            if (x==15 && y == 15) cout << "factor LT: " << factorLT << endl;
+            
+        
+
             
             if(y < gridResY - 1 && x < gridResX - 1) {
                 //right top
@@ -721,6 +727,17 @@ void vizPhysics::drawMesh () {
                 ofVec3f posRT = rt->getPosition();
                 ofVec3f posRB = rb->getPosition();
                 ofVec3f posLB = lb->getPosition();
+             
+                float factorRT =  rt->getVelocity().length()*.2*mPulseIntensity;
+                ofColor colRT =  mVertexColor - mPulseColor*factorRT;
+                
+                
+                float factorRB  =  rb->getVelocity().length()*.2*mPulseIntensity;
+                ofColor colRB =  mVertexColor - mPulseColor*factorRB;
+                
+                float factorLB  =  lb->getVelocity().length()*.2*mPulseIntensity;
+                ofColor colLB =  mVertexColor - mPulseColor*factorLB;
+                
                 
                 if(mbToggleMesh){
                     if (mbToggleGLLines){
@@ -739,10 +756,8 @@ void vizPhysics::drawMesh () {
                     ofVec3f normLT = getNormal(posLT, posRT, posLB);
                     glNormal3f(normLT.x, normLT.y, normLT.z);
                     glVertex3f(posLT.x, posLT.y, posLT.z);
-                    glColor3f(mVertexColor.r/255.0 - lt->getVelocity().length()*mPulseIntensity*mPulseColor.r,
-                              mVertexColor.g/255.0 - lt->getVelocity().length()*mPulseIntensity*mPulseColor.g,
-                              mVertexColor.b/255.0 - lt->getVelocity().length()*mPulseIntensity*mPulseColor.b);
-                    
+                    glColor3f(colLT.r/255.0,colLT.g/255.0, colLT.b/255.0);
+                
                     // - - - - - - - - - - - - - - - -
                     if (mbPerVertexUVs) {
                         glTexCoord2f(1, 0);
@@ -753,9 +768,7 @@ void vizPhysics::drawMesh () {
                     ofVec3f normRT = getNormal(posRT, posRB, posLT);
                     glNormal3f(normRT.x, normRT.y, normRT.z);
                     glVertex3f(posRT.x, posRT.y, posRT.z);
-                    glColor3f(mVertexColor.r/255.0 - rt->getVelocity().length()*mPulseIntensity*mPulseColor.r,
-                              mVertexColor.g/255.0 - rt->getVelocity().length()*mPulseIntensity*mPulseColor.g,
-                              mVertexColor.b/255.0 - rt->getVelocity().length()*mPulseIntensity*mPulseColor.b);
+                    glColor3f(colRT.r/255.0,colRT.g/255.0, colRT.b/255.0);
                     
                     // - - - - - - - - - - - - - - - -
                     if (mbPerVertexUVs) {
@@ -767,9 +780,7 @@ void vizPhysics::drawMesh () {
                     ofVec3f normRB = getNormal(posRB, posLB, posRT);
                     glNormal3f(normRB.x, normRB.y, normRB.z);
                     glVertex3f(posRB.x, posRB.y, posRB.z);
-                    glColor3f(mVertexColor.r/255.0 - rb->getVelocity().length()*mPulseIntensity*mPulseColor.r,
-                              mVertexColor.g/255.0 - rb->getVelocity().length()*mPulseIntensity*mPulseColor.g,
-                              mVertexColor.b/255.0 - rb->getVelocity().length()*mPulseIntensity*mPulseColor.b);
+                    glColor3f(colRB.r/255.0,colRB.g/255.0, colRB.b/255.0);
                     
                     // - - - - - - - - - - - - - - - - - - - - - - SECOND TRIANGLE
                     
@@ -782,10 +793,7 @@ void vizPhysics::drawMesh () {
                     
                     glNormal3f(normRB.x, normRB.y, normRB.z);
                     glVertex3f(posRB.x, posRB.y, posRB.z);
-                    glColor3f(mVertexColor.r/255.0 - rb->getVelocity().length()*mPulseIntensity*mPulseColor.r,
-                              mVertexColor.g/255.0 - rb->getVelocity().length()*mPulseIntensity*mPulseColor.g,
-                              mVertexColor.b/255.0 - rb->getVelocity().length()*mPulseIntensity*mPulseColor.b);
-                    
+                    glColor3f(colRB.r/255.0,colRB.g/255.0, colRB.b/255.0);
                     
                     
                     if (mbPerVertexUVs) {
@@ -797,9 +805,7 @@ void vizPhysics::drawMesh () {
                     ofVec3f normLB = getNormal(posLB, posLT, posRT);
                     glNormal3f(normLB.x, normLB.y, normLB.z);
                     glVertex3f(posLB.x, posLB.y, posLB.z);
-                    glColor3f(mVertexColor.r/255.0 - lb->getVelocity().length()*mPulseIntensity*mPulseColor.r,
-                              mVertexColor.g/255.0 - lb->getVelocity().length()*mPulseIntensity*mPulseColor.g,
-                              mVertexColor.b/255.0 - lb->getVelocity().length()*mPulseIntensity*mPulseColor.b);
+                    glColor3f(colLB.r/255.0,colLB.g/255.0, colLB.b/255.0);
                     
                     if (mbPerVertexUVs) {
                         glTexCoord2f(0, 0);
@@ -809,9 +815,7 @@ void vizPhysics::drawMesh () {
                     
                     glNormal3f(normLT.x, normLT.y, normLT.z);
                     glVertex3f(posLT.x, posLT.y, posLT.z);
-                    glColor3f(mVertexColor.r/255.0 - lt->getVelocity().length()*mPulseIntensity*mPulseColor.r,
-                              mVertexColor.g/255.0 - lt->getVelocity().length()*mPulseIntensity*mPulseColor.g,
-                              mVertexColor.b/255.0 - lt->getVelocity().length()*mPulseIntensity*mPulseColor.b);
+                    glColor3f(colLT.r/255.0,colLT.g/255.0, colLT.b/255.0);
                 }
                 glEnd();
             }

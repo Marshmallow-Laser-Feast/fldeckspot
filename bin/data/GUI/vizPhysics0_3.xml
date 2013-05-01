@@ -57,19 +57,19 @@
     <Kind>28</Kind>
     <Name>mVertexColor</Name>
     <XValue>1.000000000</XValue>
-    <YValue>1.000000000</YValue>
-    <RColor>254</RColor>
-    <GColor>254</GColor>
-    <BColor>254</BColor>
+    <YValue>0.370370358</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
+    <BColor>255</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>28</Kind>
     <Name>mPulseColor</Name>
-    <XValue>0.000000000</XValue>
-    <YValue>0.135802463</YValue>
-    <RColor>3</RColor>
-    <GColor>1</GColor>
+    <XValue>0.487654328</XValue>
+    <YValue>0.098765433</YValue>
+    <RColor>249</RColor>
+    <GColor>135</GColor>
     <BColor>0</BColor>
     <AColor>255</AColor>
 </Widget>

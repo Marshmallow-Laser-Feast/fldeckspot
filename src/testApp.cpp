@@ -236,10 +236,7 @@ bool testApp::setMode(ModeName newMode) {
     }
     return false;
 }
-
 //--------------------------------------------------------------
-
-
 void testApp::update(){
     //weenzor::update( ofGetElapsedTimeMillis() );
     ofSetWindowTitle(ofToString(ofGetFrameRate(), 0));
