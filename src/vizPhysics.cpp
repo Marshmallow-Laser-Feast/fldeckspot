@@ -83,6 +83,8 @@ void vizPhysics::setup(){
     gui->addToggle("mbToggleMesh", &mbToggleMesh, dim, dim);
     gui->addToggle("mbToggleBoxes", &mbToggleBoxes, dim, dim);
     gui->addToggle("mbToggleSpheres", &mbToggleSpheres, dim, dim);
+    gui->addToggle("mbTogglePulse", &mbTogglePulse, dim, dim);
+    gui->addSlider("mPulseIntensity", 0, 1, &mPulseIntensity, length-xInit,dim);
     
     gui->addToggle("mbTogglePointLight", &mbTogglePointLight, dim, dim);
     gui->addToggle("mbToggleSpotLightMouse", &mbToggleSpotLightMouse, dim, dim);
@@ -480,10 +482,10 @@ void vizPhysics::drawCopy(){
     updateMesh();
     //ofSphere( 0,0,0, 100.0f);
     //ofSetColor(0);
-    for(int i=0; i<particles.size(); i++) {
-        msa::physics::Particle3D *p = particles[i];
-        //ofSphere(p->getPosition(), 5.0f);
-    }
+//    for(int i=0; i<particles.size(); i++) {
+//        msa::physics::Particle3D *p = particles[i];
+//        
+//    }
     if(mbToggleTexture1) image.getTextureReference().unbind();
     if(mbToggleTexture2) image2.getTextureReference().unbind();
     if(mbToggleFboTexture) textureFbo.getTextureReference().unbind();
@@ -733,7 +735,7 @@ void vizPhysics::updateMesh () {
                     ofVec3f normLT = getNormal(posLT, posRT, posLB);
                     glNormal3f(normLT.x, normLT.y, normLT.z);
                     glVertex3f(posLT.x, posLT.y, posLT.z);
-                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0, mVertexColor.b/255.0);
+                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0,mVertexColor.b/255.0-lt->getVelocity().length()*mPulseIntensity);
                     
                     // - - - - - - - - - - - - - - - -
                     if (mbPerVertexUVs) {
@@ -745,7 +747,7 @@ void vizPhysics::updateMesh () {
                     ofVec3f normRT = getNormal(posRT, posRB, posLT);
                     glNormal3f(normRT.x, normRT.y, normRT.z);
                     glVertex3f(posRT.x, posRT.y, posRT.z);
-                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0, mVertexColor.b/255.0);
+                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0, mVertexColor.b/255.0-rt->getVelocity().length()*mPulseIntensity);
                     
                     // - - - - - - - - - - - - - - - -
                     if (mbPerVertexUVs) {
@@ -757,21 +759,20 @@ void vizPhysics::updateMesh () {
                     ofVec3f normRB = getNormal(posRB, posLB, posRT);
                     glNormal3f(normRB.x, normRB.y, normRB.z);
                     glVertex3f(posRB.x, posRB.y, posRB.z);
-                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0, mVertexColor.b/255.0);
+                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0,mVertexColor.b/255.0-rb->getVelocity().length()*mPulseIntensity);
                     
                     // - - - - - - - - - - - - - - - - - - - - - - SECOND TRIANGLE
                     
                     if (mbPerVertexUVs) {
-                        glTexCoord2f(1, 1);
-                        //glTexCoord2f(0,0);
+                        glTexCoord2f(1, 1);  
                     }else {
                         glTexCoord2f((x+1)/gridResX, (y+1)/gridResY);
                     }
                     
-                    //ofVec3f normRB2 = getNormal(posRB, posLB, posRT);
+                    
                     glNormal3f(normRB.x, normRB.y, normRB.z);
                     glVertex3f(posRB.x, posRB.y, posRB.z);
-                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0, mVertexColor.b/255.0);
+                    glColor3f(mVertexColor.r/255.0,mVertexColor.g/255.0, mVertexColor.b/255.0-rb->getVelocity().length()*mPulseIntensity);
                     
                     
                     
@@ -784,7 +785,7 @@ void vizPhysics::updateMesh () {
                     ofVec3f normLB = getNormal(posLB, posLT, posRT);
                     glNormal3f(normLB.x, normLB.y, normLB.z);
                     glVertex3f(posLB.x, posLB.y, posLB.z);
-                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0, mVertexColor.b/255.0);
+                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0,mVertexColor.b/255.0-lb->getVelocity().length()*mPulseIntensity);
                     
                     if (mbPerVertexUVs) {
                         glTexCoord2f(0, 0);
@@ -792,10 +793,9 @@ void vizPhysics::updateMesh () {
                         glTexCoord2f(x/gridResX, y/gridResY);
                     }
                     
-                    //ofVec3f normLT2 = getNormal(posLT, posRT, posLB);
                     glNormal3f(normLT.x, normLT.y, normLT.z);
                     glVertex3f(posLT.x, posLT.y, posLT.z);
-                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0, mVertexColor.b/255.0);
+                    glColor3f(mVertexColor.r/255.0, mVertexColor.g/255.0,mVertexColor.b/255.0-lt->getVelocity().length()*mPulseIntensity);
                 }
                 glEnd();
             }

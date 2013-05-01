@@ -56,10 +56,10 @@
 <Widget>
     <Kind>28</Kind>
     <Name>mVertexColor</Name>
-    <XValue>0.691358030</XValue>
+    <XValue>0.580246925</XValue>
     <YValue>1.000000000</YValue>
-    <RColor>185</RColor>
-    <GColor>185</GColor>
-    <BColor>185</BColor>
+    <RColor>151</RColor>
+    <GColor>151</GColor>
+    <BColor>151</BColor>
     <AColor>255</AColor>
 </Widget>

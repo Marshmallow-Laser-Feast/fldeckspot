@@ -67,9 +67,9 @@ public:
     ofCamera camTop;
     bool mbCamTop, mbToggleFboTexture;
   
-    float mBoxSize, mSphereSize, mMaterialShininess, mSphereResolution, mCamTopY, mOffsetX;
+    float mBoxSize, mSphereSize, mMaterialShininess, mSphereResolution, mCamTopY, mOffsetX, mPulseIntensity;
    
-    bool mbBlendModeAdd,
+    bool mbBlendModeAdd, mbTogglePulse,
     mbToggleLighting, mbTogglePointLight, mbToggleSpotLight, mbToggleSpotLightMouse,
     mbToggleMaterial, mbToggleTexture1, mbToggleTexture2, mbPerVertexUVs, mbToggleShader, mbToggleBoxes, mbToggleSpheres, mbToggleMesh, mbToggleGLLines, mbToggleGLTriangles;
     
@@ -77,7 +77,7 @@ public:
     ofColor mSpotLightDiffuseColor, mSpotLightSpecularColor,
             mPointLightDiffuseColor, mPointLightSpecularColor,
             mVertexColor, mMaterialDiffuseColor, mMaterialSpecularColor, mMaterialEmissiveColor, mMaterialAmbientColor,
-            mBoxColor, mSphereColor;
+            mBoxColor, mSphereColor, mPulseColor;
     
     //- - - - - - - OFX UI - - - - - - - -
     void guiEvent(ofxUIEventArgs &e);
