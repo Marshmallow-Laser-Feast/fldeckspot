@@ -41,7 +41,7 @@ public:
     
     //- - - - - - - OFX UI - - - - - - - -
     void guiEvent(ofxUIEventArgs &e);
-    ofxUICanvas *gui;
+    ofxUIScrollableCanvas *gui;
     ofImage m_imgGradient;
     int mVizNum;
     float *buffer;
@@ -49,7 +49,7 @@ public:
     
     
     //- - - - - - - - -
-    ofColor mBgColor, mAdidasColor, mConverseColor, mNikeColor;
+    ofColor mBgColor;
     bool bUpdateTUIO, mbToggleCapture,
     mbShowCursor, mbToggleDots,
     mbToggleNeedles, mbTogglePhysics,
@@ -66,22 +66,28 @@ public:
     bool doShowColorbars;
     ofImage imageColorBars;
     
-    //ofxImageSequenceRecorder ImageRecorder;
     ofImage img;
     char mCapturePath[32] ;
     float mTakeNum;
     
-    //- - - - - - - Visualisations
+    // - - --  LED
+    bool setLEDColor(ofColor color);
+    ofColor mStartColor, mAdidasColor, mConverseColor, mNikeColor, mCurrentColor, mEndColor, mTargetColor;
+    int  mLEDCues [6] = {0, 588, 1299, 1742, 2000, 2350};
+    
+    
+    //- - - - - - - MIDI
     void newMidiMessage(ofxMidiMessage& eventArgs);
 	stringstream text;
 	ofxMidiIn midiIn;
+    ofxMidiOut midiOut;
 	ofxMidiMessage midiMessage;
         
     //- - - - - - - SCENE RUNNER
     bool mbMainVideo;
     int  mMovieLength = 2300;
     int  mRanges [9] = {0,250, 588, 1065, 1299, 1536, 1742, 2350, mMovieLength};
-    int  mLEDCues [4] = {0, 588, 1299, 1742};
+   
   
     enum ModeName {
         kModeNikeBeats,

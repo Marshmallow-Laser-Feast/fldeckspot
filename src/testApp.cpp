@@ -38,7 +38,7 @@ void testApp::setup(){
     ofColor cp = ofColor(0,0,255);
     ofColor cpo = ofColor(124,0,255);
     
-    gui = new ofxUICanvas(1280, 0, length+xInit, 1080);
+    gui = new ofxUIScrollableCanvas(1280, 0, length+xInit, 1080);
     
     gui->setFont("GUI/CarroisGothic-Regular.ttf");                     //This loads a new font and sets the GUI font
     gui->setUIColors(cb, co, coh, cf, cfh, cp, cpo);
@@ -79,13 +79,17 @@ void testApp::setup(){
     gui->addWidgetDown(new ofxUILabel("Visualisations", OFX_UI_FONT_SMALL));
     m_imgGradient.allocate(162,81, OF_IMAGE_COLOR);
     m_imgGradient.loadImage("img/gradient_162x81.png");
-    gui->addWidgetDown(new ofxUILabel("nike color", OFX_UI_FONT_SMALL));
-    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "nike color"));
+    
+    gui->addWidgetDown(new ofxUILabel("start color", OFX_UI_FONT_SMALL));
+    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "strart color"));
     gui->addWidgetDown(new ofxUILabel("converse color", OFX_UI_FONT_SMALL));
     gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "converse color"));
     gui->addWidgetDown(new ofxUILabel("adidas color", OFX_UI_FONT_SMALL));
     gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "adidas color"));
-
+    gui->addWidgetDown(new ofxUILabel("converse color", OFX_UI_FONT_SMALL));
+    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "converse color"));
+    gui->addWidgetDown(new ofxUILabel("end color", OFX_UI_FONT_SMALL));
+    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "end color"));
     
     
     //  - - - - - - - - - - FPS DISPLAY - - - - - - - - - - - - - - - - -
@@ -160,6 +164,17 @@ void testApp::setup(){
 
     
     
+}
+//------------------------------------------------------------
+bool testApp::setLEDColor(ofColor color) {
+    if(mCurrentColor != color) {
+        
+        ofLogNotice() << " LED COLOR SWITCH: mCurrentColor: " << mCurrentColor << " " << " new Color: " << color << endl;
+        mCurrentColor = color;
+        
+        return true;
+    }
+    return false;
 }
 //------------------------------------------------------------
 bool testApp::setMode(ModeName newMode) {
@@ -276,8 +291,18 @@ void testApp::update(){
     else if(ofInRange(mCurrentFrame, mRanges[6], mRanges[7])) setMode(kModeAdidasFX);
     }
     
+    //  - - - - - - - - - - LEDS - - - - - - - - - - - - - - - - -
+
+    if (ofInRange(mCurrentFrame, mLEDCues[0], mLEDCues[1])) setLEDColor(mStartColor);
+    else if (ofInRange(mCurrentFrame, mLEDCues[1], mLEDCues[2])) setLEDColor(mNikeColor);
+    else if (ofInRange(mCurrentFrame, mLEDCues[2], mLEDCues[3])) setLEDColor(mConverseColor);
+    else if (ofInRange(mCurrentFrame, mLEDCues[3], mLEDCues[4])) setLEDColor(mAdidasColor);
+    else if (ofInRange(mCurrentFrame, mLEDCues[4], mLEDCues[5])) setLEDColor(mEndColor);
     
     
+    midiOut.sendControlChange(1, 1, mCurrentColor.r);
+    midiOut.sendControlChange(1, 2, mCurrentColor.g);
+    midiOut.sendControlChange(1, 3, mCurrentColor.b);
     //  - - - - - - - - - - OFX UI - - - - - - - - - - - - - - - - -
     mg->addPoint(ofGetFrameRate());
         
@@ -403,7 +428,7 @@ void testApp::draw(){
     glPopMatrix();
     
     ofSetColor(255);
-    //cout << "midiMessage.value: " << midiMessage.value << endl;
+       //cout << "midiMessage.value: " << midiMessage.value << endl;
    // draw midi
     //ofRect(ofGetHeight()-20, 20, ofMap(midiMessage.value, 0, 127, 0, ofGetWidth()-40), 20);
 }
@@ -519,7 +544,13 @@ void testApp::guiEvent(ofxUIEventArgs &e){
     } else if(name == "converse color"){
         ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
         mConverseColor =  sampler->getColor();
-    } else if (name == "toggle Mouse"){
+    }else if(name == "end color"){
+        ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
+        mEndColor =  sampler->getColor();
+    } else if(name == "start color"){
+        ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
+        mStartColor =  sampler->getColor();
+    }else if (name == "toggle Mouse"){
         mbShowCursor = !mbShowCursor;
     } else if (name == "reset TUIO offset"){
         

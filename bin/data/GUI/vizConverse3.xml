@@ -1,7 +1,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>select preset</Name>
-    <Value>2.000000000</Value>
+    <Value>8.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -11,12 +11,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mCamTopY</Name>
-    <Value>-1525.000000000</Value>
+    <Value>-977.717407227</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>mbToggleShape</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -26,17 +26,17 @@
 <Widget>
     <Kind>2</Kind>
     <Name>mbToggleOverlayMovie</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mCamRotZ</Name>
-    <Value>270.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mCamRotY</Name>
-    <Value>90.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -46,22 +46,22 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mOuterStripeRadiusMin</Name>
-    <Value>576.086914062</Value>
+    <Value>217.391296387</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mOuterStripeRadiusMax</Name>
-    <Value>1.847826004</Value>
+    <Value>-2.173913002</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mInnerStripeRadiusMin</Name>
-    <Value>0.000000000</Value>
+    <Value>0.891304255</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mInnerStripeRadiusMax</Name>
-    <Value>0.217391014</Value>
+    <Value>-10.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -76,22 +76,22 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mOuterStripeThickness</Name>
-    <Value>12.071195602</Value>
+    <Value>4.736685276</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mInnerStripeThickness</Name>
-    <Value>21.361576080</Value>
+    <Value>26.740219116</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mSecondRingStripeThickness</Name>
-    <Value>17.449836731</Value>
+    <Value>21.850543976</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mOffset</Name>
-    <Value>259.239135742</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -101,12 +101,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mStripeOffsetAngle</Name>
-    <Value>-3.521739006</Value>
+    <Value>-3.599999905</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mStripeOffset</Name>
-    <Value>0.703913033</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -116,10 +116,10 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mRange</Name>
-    <Value>94.244567871</Value>
+    <Value>55.211956024</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mIntensity</Name>
-    <Value>57.951087952</Value>
+    <Value>89.130439758</Value>
 </Widget>

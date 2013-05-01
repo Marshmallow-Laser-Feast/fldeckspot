@@ -46,7 +46,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>toggle vizMoviePlayer</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -56,35 +56,35 @@
 <Widget>
     <Kind>4</Kind>
     <Name>scrub</Name>
-    <Value>770.000000000</Value>
+    <Value>2300.000000000</Value>
 </Widget>
 <Widget>
     <Kind>28</Kind>
     <Name>nike color</Name>
-    <XValue>0.500000000</XValue>
-    <YValue>0.493827164</YValue>
-    <RColor>5</RColor>
-    <GColor>233</GColor>
-    <BColor>255</BColor>
+    <XValue>0.296296299</XValue>
+    <YValue>0.419753075</YValue>
+    <RColor>3</RColor>
+    <GColor>150</GColor>
+    <BColor>83</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>28</Kind>
     <Name>converse color</Name>
-    <XValue>0.500000000</XValue>
-    <YValue>0.493827164</YValue>
-    <RColor>5</RColor>
-    <GColor>233</GColor>
-    <BColor>255</BColor>
+    <XValue>0.679012358</XValue>
+    <YValue>0.271604925</YValue>
+    <RColor>149</RColor>
+    <GColor>255</GColor>
+    <BColor>93</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>28</Kind>
     <Name>adidas color</Name>
-    <XValue>0.500000000</XValue>
-    <YValue>0.493827164</YValue>
-    <RColor>5</RColor>
-    <GColor>233</GColor>
-    <BColor>255</BColor>
+    <XValue>0.382716060</XValue>
+    <YValue>0.172839507</YValue>
+    <RColor>184</RColor>
+    <GColor>196</GColor>
+    <BColor>0</BColor>
     <AColor>255</AColor>
 </Widget>
