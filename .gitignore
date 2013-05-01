@@ -15,3 +15,5 @@
 bin/data/master overlay/*
 bin/*.app
 bin/*.app/*
+
+*.xcuserstate
