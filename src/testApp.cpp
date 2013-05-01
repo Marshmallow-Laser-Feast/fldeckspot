@@ -422,6 +422,21 @@ void testApp::keyPressed(int key){
         case 'c':
             doShowColorbars ^= true;
             break;
+            
+        case ',':
+        case '<':
+            mainVideo.setFrame(mainVideo.getCurrentFrame()-25);
+            break;
+            
+        case '.':
+        case '>':
+            mainVideo.setFrame(mainVideo.getCurrentFrame()+25);
+            break;
+            
+        case 'w':
+            mainVideo.setFrame(0);
+            break;
+            
     }
     
     if (key == 9) gui->toggleVisible();
