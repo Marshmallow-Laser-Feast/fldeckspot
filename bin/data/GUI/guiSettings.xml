@@ -20,41 +20,71 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>toggle Needles</Name>
+    <Name>draw on 2nd screen</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>toggle Dots</Name>
+    <Name>toggle vizNeedles</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>toggle Physics</Name>
+    <Name>toggle vizDots</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>toggle Converse</Name>
+    <Name>toggle vizPhysics</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>toggle MoviePlayer</Name>
+    <Name>toggle vizConverse</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>toggle 1440</Name>
+    <Name>toggle vizMoviePlayer</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>Show Main Video</Name>
-    <Value>0</Value>
+    <Name>toggle video overlay</Name>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>scrub</Name>
-    <Value>462.804870605</Value>
+    <Value>770.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>nike color</Name>
+    <XValue>0.500000000</XValue>
+    <YValue>0.493827164</YValue>
+    <RColor>5</RColor>
+    <GColor>233</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>converse color</Name>
+    <XValue>0.500000000</XValue>
+    <YValue>0.493827164</YValue>
+    <RColor>5</RColor>
+    <GColor>233</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>adidas color</Name>
+    <XValue>0.500000000</XValue>
+    <YValue>0.493827164</YValue>
+    <RColor>5</RColor>
+    <GColor>233</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
 </Widget>

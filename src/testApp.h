@@ -49,7 +49,7 @@ public:
     
     
     //- - - - - - - - -
-    ofColor mBgColor;
+    ofColor mBgColor, mAdidasColor, mConverseColor, mNikeColor;
     bool bUpdateTUIO, mbToggleCapture,
     mbShowCursor, mbToggleDots,
     mbToggleNeedles, mbTogglePhysics,
@@ -76,16 +76,13 @@ public:
 	stringstream text;
 	ofxMidiIn midiIn;
 	ofxMidiMessage midiMessage;
-    
-    
-    
-    
+        
     //- - - - - - - SCENE RUNNER
     bool mbMainVideo;
-   int  mMovieLength = 2300;
-   int  mRanges [9] = {0,250, 588, 1065, 1299, 1536, 1742, 2350, mMovieLength};
-
-    //int mMovieLength;
+    int  mMovieLength = 2300;
+    int  mRanges [9] = {0,250, 588, 1065, 1299, 1536, 1742, 2350, mMovieLength};
+    int  mLEDCues [4] = {0, 588, 1299, 1742};
+  
     enum ModeName {
         kModeNikeBeats,
         kModeNikeTune,

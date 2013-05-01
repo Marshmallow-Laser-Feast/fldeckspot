@@ -49,27 +49,24 @@ void testApp::setup(){
     gui->addWidgetDown(new ofxUILabel("Footlocker v4", OFX_UI_FONT_SMALL));
     gui->addSpacer(length-xInit, 1);
     
-   gui->addSlider("TUIO offsetX", -200.0, 200.0, &tuioOffsetX, length-xInit,dim);
+    gui->addSlider("TUIO offsetX", -200.0, 200.0, &tuioOffsetX, length-xInit,dim);
     gui->addSlider("TUIO offsetY", -200.0, 200.0, &tuioOffsetY, length-xInit,dim);
-    
-    //gui->addSlider("mXOffset", -500, 500, &mXOffset, length-xInit,dim);
-    //gui->addSlider("TUIO scaleY", .5, 2.0, &tuioScaleY, length-xInit,dim);
-    //gui->addButton("reset TUIO offset", false, dim, dim);
     
     // - - - - - -  - - - - APP CONTROL - - - - - - - - - - - - - -
     gui->addToggle("toggle TUIO", &bUpdateTUIO, dim, dim);
     gui->addToggle("toggle Cursor", &mbShowCursor, dim, dim);
+    gui->addToggle("draw on 2nd screen", &mbToggle1440, dim, dim);
     
+    //  - - - - - - - - - - VIZ UI - - - - - - - - - - - - - - - - -
     gui->addWidgetDown(new ofxUILabel("visualisations", OFX_UI_FONT_SMALL));
-    gui->addToggle("toggle Needles", &mbToggleNeedles, dim, dim);
-    gui->addToggle("toggle Dots", &mbToggleDots, dim, dim);
-    gui->addToggle("toggle Physics", &mbTogglePhysics, dim, dim);
-    gui->addToggle("toggle Converse", &mbToggleConverse, dim, dim);
-    gui->addToggle("toggle MoviePlayer", &mbToggleMoviePlayer, dim, dim);
-    
-    gui->addToggle("toggle 1440", &mbToggle1440, dim, dim);
-    
-    gui->addToggle("Show Main Video", &mbMainVideo, dim, dim);
+    gui->addToggle("toggle vizNeedles", &mbToggleNeedles, dim, dim);
+    gui->addToggle("toggle vizDots", &mbToggleDots, dim, dim);
+    gui->addToggle("toggle vizPhysics", &mbTogglePhysics, dim, dim);
+    gui->addToggle("toggle vizConverse", &mbToggleConverse, dim, dim);
+    gui->addToggle("toggle vizMoviePlayer", &mbToggleMoviePlayer, dim, dim);
+
+    //  - - - - - - - - - - VIDEO OVERLAY- - - - - - - - - - - - - - - - -
+    gui->addToggle("toggle video overlay", &mbMainVideo, dim, dim);
     
     movieSlider =  gui->addSlider("scrub", 0, mMovieLength, &selectedFrame, length-xInit,dim);
     movieSlider->setLabelPrecision(0);
@@ -77,6 +74,19 @@ void testApp::setup(){
     gui->addButton("next range", false, dim, dim);
     gui->addButton("play", false, dim*2, dim*2);
     gui->addButton("pause", false, dim*2, dim*2);
+    
+    //  - - - - - - - - - - VIZ UI - - - - - - - - - - - - - - - - -
+    gui->addWidgetDown(new ofxUILabel("Visualisations", OFX_UI_FONT_SMALL));
+    m_imgGradient.allocate(162,81, OF_IMAGE_COLOR);
+    m_imgGradient.loadImage("img/gradient_162x81.png");
+    gui->addWidgetDown(new ofxUILabel("nike color", OFX_UI_FONT_SMALL));
+    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "nike color"));
+    gui->addWidgetDown(new ofxUILabel("converse color", OFX_UI_FONT_SMALL));
+    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "converse color"));
+    gui->addWidgetDown(new ofxUILabel("adidas color", OFX_UI_FONT_SMALL));
+    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "adidas color"));
+
+    
     
     //  - - - - - - - - - - FPS DISPLAY - - - - - - - - - - - - - - - - -
     vector<float> buffer;
@@ -300,9 +310,7 @@ void testApp::update(){
         } else {
             compassNeedles->update(target);
         }
-        //compassNeedles->update();
     }
-    
     if (mbToggleDots){
         if (bUpdateTUIO) {
             dots->update(l);
@@ -311,7 +319,6 @@ void testApp::update(){
         }
     }
     if(mbTogglePhysics) {
-     
         if (bUpdateTUIO) {
             physicsViz->update(l);
         } else {
@@ -320,7 +327,6 @@ void testApp::update(){
         physicsViz->update();
     }
     if(mbToggleConverse) {
-        
         if (bUpdateTUIO) {
             converseViz->update(l);
         } else {
@@ -504,9 +510,15 @@ void testApp::guiEvent(ofxUIEventArgs &e){
 	int kind = e.widget->getKind();
 	ofLogNotice() << "got event from: " << name << endl;
 	
-	if(name == "SAMPLER"){
+	if(name == "nike color"){
         ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
-        mBgColor =  sampler->getColor();
+        mNikeColor =  sampler->getColor();
+    } else if(name == "adidas color"){
+            ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
+            mAdidasColor =  sampler->getColor();
+    } else if(name == "converse color"){
+        ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
+        mConverseColor =  sampler->getColor();
     } else if (name == "toggle Mouse"){
         mbShowCursor = !mbShowCursor;
     } else if (name == "reset TUIO offset"){
