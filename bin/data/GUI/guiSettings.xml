@@ -1,14 +1,4 @@
 <Widget>
-    <Kind>4</Kind>
-    <Name>TUIO offsetX</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>4</Kind>
-    <Name>TUIO offsetY</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
     <Kind>2</Kind>
     <Name>toggle TUIO</Name>
     <Value>0</Value>
@@ -21,7 +11,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>draw on 2nd screen</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -56,16 +46,36 @@
 <Widget>
     <Kind>4</Kind>
     <Name>scrub</Name>
-    <Value>2300.000000000</Value>
+    <Value>2229.878173828</Value>
 </Widget>
 <Widget>
     <Kind>28</Kind>
-    <Name>nike color</Name>
-    <XValue>0.296296299</XValue>
-    <YValue>0.419753075</YValue>
-    <RColor>3</RColor>
-    <GColor>150</GColor>
-    <BColor>83</BColor>
+    <Name>strart color</Name>
+    <XValue>0.500000000</XValue>
+    <YValue>0.493827164</YValue>
+    <RColor>5</RColor>
+    <GColor>233</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>converse color</Name>
+    <XValue>0.500000000</XValue>
+    <YValue>0.493827164</YValue>
+    <RColor>5</RColor>
+    <GColor>233</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>adidas color</Name>
+    <XValue>0.382716060</XValue>
+    <YValue>0.172839507</YValue>
+    <RColor>184</RColor>
+    <GColor>196</GColor>
+    <BColor>0</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
@@ -80,11 +90,11 @@
 </Widget>
 <Widget>
     <Kind>28</Kind>
-    <Name>adidas color</Name>
-    <XValue>0.382716060</XValue>
-    <YValue>0.172839507</YValue>
-    <RColor>184</RColor>
-    <GColor>196</GColor>
-    <BColor>0</BColor>
+    <Name>end color</Name>
+    <XValue>0.500000000</XValue>
+    <YValue>0.493827164</YValue>
+    <RColor>5</RColor>
+    <GColor>233</GColor>
+    <BColor>255</BColor>
     <AColor>255</AColor>
 </Widget>

@@ -55,6 +55,16 @@
 </Widget>
 <Widget>
     <Kind>2</Kind>
+    <Name>mbTogglePulse</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mPulseIntensity</Name>
+    <Value>0.271739125</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
     <Name>mbTogglePointLight</Name>
     <Value>1</Value>
 </Widget>

@@ -66,10 +66,10 @@
 <Widget>
     <Kind>28</Kind>
     <Name>mPulseColor</Name>
-    <XValue>0.487654328</XValue>
-    <YValue>0.098765433</YValue>
-    <RColor>249</RColor>
-    <GColor>135</GColor>
-    <BColor>0</BColor>
+    <XValue>0.518518507</XValue>
+    <YValue>0.185185179</YValue>
+    <RColor>221</RColor>
+    <GColor>255</GColor>
+    <BColor>11</BColor>
     <AColor>255</AColor>
 </Widget>

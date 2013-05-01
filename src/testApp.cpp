@@ -49,8 +49,8 @@ void testApp::setup(){
     gui->addWidgetDown(new ofxUILabel("Footlocker v4", OFX_UI_FONT_SMALL));
     gui->addSpacer(length-xInit, 1);
     
-    gui->addSlider("TUIO offsetX", -200.0, 200.0, &tuioOffsetX, length-xInit,dim);
-    gui->addSlider("TUIO offsetY", -200.0, 200.0, &tuioOffsetY, length-xInit,dim);
+    //gui->addSlider("TUIO offsetX", -200.0, 200.0, &tuioOffsetX, length-xInit,dim);
+    //gui->addSlider("TUIO offsetY", -200.0, 200.0, &tuioOffsetY, length-xInit,dim);
     
     // - - - - - -  - - - - APP CONTROL - - - - - - - - - - - - - -
     gui->addToggle("toggle TUIO", &bUpdateTUIO, dim, dim);
@@ -59,11 +59,11 @@ void testApp::setup(){
     
     //  - - - - - - - - - - VIZ UI - - - - - - - - - - - - - - - - -
     gui->addWidgetDown(new ofxUILabel("visualisations", OFX_UI_FONT_SMALL));
-    gui->addToggle("toggle vizNeedles", &mbToggleNeedles, dim, dim);
-    gui->addToggle("toggle vizDots", &mbToggleDots, dim, dim);
-    gui->addToggle("toggle vizPhysics", &mbTogglePhysics, dim, dim);
-    gui->addToggle("toggle vizConverse", &mbToggleConverse, dim, dim);
-    gui->addToggle("toggle vizMoviePlayer", &mbToggleMoviePlayer, dim, dim);
+    vizNeedlesToggle = gui->addToggle("toggle vizNeedles", &mbToggleNeedles, dim, dim);
+    vizDotsToggle = gui->addToggle("toggle vizDots", &mbToggleDots, dim, dim);
+    vizPhysicsToggle = gui->addToggle("toggle vizPhysics", &mbTogglePhysics, dim, dim);
+    vizConverseToggle = gui->addToggle("toggle vizConverse", &mbToggleConverse, dim, dim);
+    vizMoviePlayerToggle = gui->addToggle("toggle vizMoviePlayer", &mbToggleMoviePlayer, dim, dim);
 
     //  - - - - - - - - - - VIDEO OVERLAY- - - - - - - - - - - - - - - - -
     gui->addToggle("toggle video overlay", &mbMainVideo, dim, dim);
@@ -199,7 +199,7 @@ bool testApp::setMode(ModeName newMode) {
                 break;
             case kModeNikeTune:
                 //movieplayer + physics - load yellow buttons
-                physicsViz->loadSettings(1);
+                physicsViz->loadSettings(10);
                 moviePlayerViz->loadSettings(1);
                 
                 mbToggleMoviePlayer = true;
@@ -213,7 +213,7 @@ bool testApp::setMode(ModeName newMode) {
             case kModeConverseTune:
                 //movieplayer + physics - load red buttons
                 moviePlayerViz->loadSettings(1);
-                physicsViz->loadSettings(1);
+                physicsViz->loadSettings(10);
                 mbTogglePhysics = true;
                 mbToggleMoviePlayer = true;
                 
@@ -265,6 +265,13 @@ bool testApp::setMode(ModeName newMode) {
             default:
                 break;
         }
+        
+        vizMoviePlayerToggle->setValue(mbToggleMoviePlayer);
+        vizPhysicsToggle->setValue(mbTogglePhysics);
+        vizConverseToggle->setValue(mbToggleConverse);
+        vizNeedlesToggle->setValue(mbToggleNeedles);
+        vizDotsToggle->setValue(mbToggleDots);
+
         return true;
     }
     return false;
@@ -305,9 +312,16 @@ void testApp::update(){
     mCurrentColor = mCurrentColor.lerp(mTargetColor, 0.1);  // TODO: make this number a GUI variable
     ofLogNotice() << mCurrentColor;
     
+<<<<<<< HEAD
     midiOut.sendControlChange(1, 1, mCurrentColor.r / 2);
     midiOut.sendControlChange(1, 2, mCurrentColor.g / 2);
     midiOut.sendControlChange(1, 3, mCurrentColor.b / 2);
+=======
+
+    midiOut.sendControlChange(1, 1, mCurrentColor.r);
+    midiOut.sendControlChange(1, 2, mCurrentColor.g);
+    midiOut.sendControlChange(1, 3, mCurrentColor.b);
+>>>>>>> main scene control ui now gets updated
     //  - - - - - - - - - - OFX UI - - - - - - - - - - - - - - - - -
     mg->addPoint(ofGetFrameRate());
         

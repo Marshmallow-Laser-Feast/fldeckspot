@@ -46,7 +46,11 @@ public:
     int mVizNum;
     float *buffer;
     ofxUIMovingGraph *mg;
-    
+    ofxUIToggle* vizNeedlesToggle;
+    ofxUIToggle* vizConverseToggle;
+    ofxUIToggle* vizPhysicsToggle;
+    ofxUIToggle* vizDotsToggle;
+    ofxUIToggle* vizMoviePlayerToggle;
     
     //- - - - - - - - -
     ofColor mBgColor;

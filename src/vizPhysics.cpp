@@ -198,7 +198,7 @@ void vizPhysics::setup(){
 	shader.load("vert.glsl", "frag.glsl");
     
     
-    image.loadImage("textures/tex113.png");  // dots
+    image.loadImage("textures/tex10.png");  // dots
     image2.loadImage("textures/tex07.png"); //stripes
     //mOverLay.loadImage("overlay/Nike_Tune_Comp_001 (00003).png");
 	
@@ -708,12 +708,10 @@ void vizPhysics::drawMesh () {
             msa::physics::Particle3D *lt = particles[i];
             ofVec3f posLT = lt->getPosition();
             float factorLT = lt->getVelocity().length()*.2*mPulseIntensity;
-            ofColor colLT =  mVertexColor - mPulseColor*factorLT;
+            ofColor colLT =  mVertexColor;
             
+            if (mbTogglePulse) mVertexColor - mPulseColor*factorLT;
             //if (x==15 && y == 15) cout << "factor LT: " << factorLT << endl;
-            
-        
-
             
             if(y < gridResY - 1 && x < gridResX - 1) {
                 //right top
@@ -728,14 +726,17 @@ void vizPhysics::drawMesh () {
                 ofVec3f posLB = lb->getPosition();
              
                 float factorRT =  rt->getVelocity().length()*.2*mPulseIntensity;
-                ofColor colRT =  mVertexColor - mPulseColor*factorRT;
-                
+                ofColor colRT =  mVertexColor;
+                if (mbTogglePulse) mVertexColor - mPulseColor*factorRT;
                 
                 float factorRB  =  rb->getVelocity().length()*.2*mPulseIntensity;
-                ofColor colRB =  mVertexColor - mPulseColor*factorRB;
+                ofColor colRB =  mVertexColor;
+                if (mbTogglePulse) colRB = mVertexColor - mPulseColor*factorRB;
                 
                 float factorLB  =  lb->getVelocity().length()*.2*mPulseIntensity;
-                ofColor colLB =  mVertexColor - mPulseColor*factorLB;
+                ofColor colLB =  mVertexColor;
+                 if (mbTogglePulse) colLB =  mVertexColor - mPulseColor*factorLB;
+                
                 
                 
                 if(mbToggleMesh){
@@ -836,6 +837,7 @@ void vizPhysics::drawMesh () {
         }
     }
 }
+
 
 
 
