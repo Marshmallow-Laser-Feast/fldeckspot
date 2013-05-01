@@ -185,6 +185,8 @@ void vizCompassNeedles::update( list<ofxTuioCursor*> cursors) {
 void vizCompassNeedles::draw(){
     ofPushMatrix();
     ofPushStyle();
+    glDisable(GL_DEPTH_TEST);
+
     ofSetColor(mBgColor);
     ofRect(0,0,DECK_WIDTH, DECK_HEIGHT );
     //ofScale(scaleX, scaleY);

@@ -129,7 +129,7 @@ void vizPhysics::setup(){
     gui2->addToggle("mbToggleMaterial", &mbToggleMaterial, dim, dim);
     gui2->addToggle("mbToggleTexture DOTS", &mbToggleTexture1, dim, dim);
     gui2->addToggle("mbToggleTexture2 STRIPES", &mbToggleTexture2, dim, dim);
-    gui2->addToggle("mbToggleFboTexture", &mbToggleFboTexture, dim, dim);
+//    gui2->addToggle("mbToggleFboTexture", &mbToggleFboTexture, dim, dim);
     
     
     
@@ -234,15 +234,15 @@ void vizPhysics::setup(){
     cam.enableMouseInput();
     //ofDisableArbTex();
     
-    rgbaFbo.allocate(DECK_WIDTH, DECK_HEIGHT, GL_RGBA, 4);
-    rgbaFbo.begin();
-    ofClear(255,128,128,0);
-    rgbaFbo.end();
-    
-    textureFbo.allocate(DECK_WIDTH, DECK_HEIGHT, GL_RGBA, 4);
-    rgbaFbo.begin();
-    ofClear(255,128,128,0);
-    rgbaFbo.end();
+//    rgbaFbo.allocate(DECK_WIDTH, DECK_HEIGHT, GL_RGBA, 4);
+//    rgbaFbo.begin();
+//    ofClear(255,128,128,0);
+//    rgbaFbo.end();
+//    
+//    textureFbo.allocate(DECK_WIDTH, DECK_HEIGHT, GL_RGBA, 4);
+//    rgbaFbo.begin();
+//    ofClear(255,128,128,0);
+//    rgbaFbo.end();
 }
 //--------------------------------------------------------------
 void vizPhysics::addParticleGrid() {
@@ -341,11 +341,36 @@ void vizPhysics::addForce(ofVec3f pos, ofVec3f dir, float f) {
 }
 //--------------------------------------------------------------
 void vizPhysics::update() {
-    
-    camTop.setGlobalPosition(0,mCamTopY, 0);
-    //update physics
     physics.setDrag(mDrag);
     physics.setGravity(ofVec3f(0, mGravity, 0));
+    physics.update();
+}
+
+//--------------------------------------------------------------
+void vizPhysics::update( list<ofxTuioCursor*> cursors) {
+    
+    int count = 0;
+    list<ofxTuioCursor*>::iterator tit;
+    for (tit=cursors.begin(); tit != cursors.end(); tit++) {
+        ofxTuioCursor* cursor = (*tit);
+        float x = cursor->getX()*OUTPUT_WIDTH-DECK_WIDTH/2;
+        float y = (-cursor->getY()*OUTPUT_HEIGHT+DECK_HEIGHT/2)*(-1);
+        
+        addForce(ofVec3f(x,0,y), ofVec3f(0,mForceStrength, 0),1.0);
+        //
+        //        //cursor->setTarget(target);
+        //        //cursor->update();
+        //        count ++;
+    }
+}
+//--------------------------------------------------------------
+void vizPhysics::update(ofVec3f target) {
+}
+//--------------------------------------------------------------
+void vizPhysics::draw(){
+    //ofScale(0,-1,0);
+//    rgbaFbo.draw(0,0);
+    camTop.setGlobalPosition(0,mCamTopY, 0);
     // Point lights emit light in all directions //
     // set the diffuse color, color reflected from the light source //
     pointLight.setDiffuseColor( mPointLightDiffuseColor);
@@ -373,7 +398,6 @@ void vizPhysics::update() {
 	// = ofGetWidth();
 	//height = ofGetHeight();
     
-    physics.update();
     //    for (int i = 0; i<particles.size(); i++){
     //        msa::physics::Particle3D *p = particles[i];
     //        mesh.setVertex(i,p->getPosition());
@@ -381,42 +405,17 @@ void vizPhysics::update() {
     
     
     //ofEnableAlphaBlending();
-    rgbaFbo.begin();
-    ofClear(0,68,128,0);
+//    rgbaFbo.begin();
+//    ofClear(0,68,128,0);  // TODO?
     drawCopy();
-    rgbaFbo.end();
+//    rgbaFbo.end();
     /*
-    textureFbo.begin();
-    ofClear(0,68,128,0);
-    ofSetColor (255,0,0);
-    ofRect(0,0,400,400);
-    textureFbo.end();*/
+     textureFbo.begin();
+     ofClear(0,68,128,0);
+     ofSetColor (255,0,0);
+     ofRect(0,0,400,400);
+     textureFbo.end();*/
     
-}
-//--------------------------------------------------------------
-void vizPhysics::update( list<ofxTuioCursor*> cursors) {
-    
-    int count = 0;
-    list<ofxTuioCursor*>::iterator tit;
-    for (tit=cursors.begin(); tit != cursors.end(); tit++) {
-        ofxTuioCursor* cursor = (*tit);
-        float x = cursor->getX()*OUTPUT_WIDTH-DECK_WIDTH/2;
-        float y = (-cursor->getY()*OUTPUT_HEIGHT+DECK_HEIGHT/2)*(-1);
-        
-        addForce(ofVec3f(x,0,y), ofVec3f(0,mForceStrength, 0),1.0);
-        //
-        //        //cursor->setTarget(target);
-        //        //cursor->update();
-        //        count ++;
-    }
-}
-//--------------------------------------------------------------
-void vizPhysics::update(ofVec3f target) {
-}
-//--------------------------------------------------------------
-void vizPhysics::draw(){
-    //ofScale(0,-1,0);
-    rgbaFbo.draw(0,0);
     
 }
 //--------------------------------------------------------------
@@ -470,10 +469,10 @@ void vizPhysics::drawCopy(){
         ofSetColor(255, 255, 255, 255);
     }
     
-    if(mbToggleFboTexture) {
-        textureFbo.getTextureReference().bind();
-        ofSetColor(255, 255, 255, 255);
-    }
+//    if(mbToggleFboTexture) {
+//        textureFbo.getTextureReference().bind();
+//        ofSetColor(255, 255, 255, 255);
+//    }
     
    
 	//mesh.draw();
@@ -486,7 +485,7 @@ void vizPhysics::drawCopy(){
 //    }
     if(mbToggleTexture1) image.getTextureReference().unbind();
     if(mbToggleTexture2) image2.getTextureReference().unbind();
-    if(mbToggleFboTexture) textureFbo.getTextureReference().unbind();
+//    if(mbToggleFboTexture) textureFbo.getTextureReference().unbind();
     ofDisableNormalizedTexCoords();
     //ofSetColor(1,0,0);
     //mesh.drawWireframe();

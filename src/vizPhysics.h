@@ -35,8 +35,8 @@ public:
     void drawMesh();
     void drawScene();
     //ofRectangle viewMain;
-    ofFbo rgbaFbo;
-    ofFbo textureFbo;
+//    ofFbo rgbaFbo;
+//    ofFbo textureFbo;
     // - - - - - - Physics
     void addParticleGrid();
     ofVec3f getNormal (ofVec3f a, ofVec3f b, ofVec3f c);
@@ -65,7 +65,7 @@ public:
     // - - - - - - CAMERA
     ofEasyCam cam; // add mouse controls for camera movement
     ofCamera camTop;
-    bool mbCamTop, mbToggleFboTexture;
+    bool mbCamTop;//, mbToggleFboTexture;
   
     float mBoxSize, mSphereSize, mMaterialShininess, mSphereResolution, mCamTopY, mOffsetX, mPulseIntensity;
    

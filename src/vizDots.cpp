@@ -142,6 +142,7 @@ void vizDots::update(ofVec3f target) {
 //--------------------------------------------------------------
 void vizDots::draw(){
     ofPushMatrix();
+    glDisable(GL_DEPTH_TEST);
 
     if (mbBlendModeAdd) ofEnableBlendMode(OF_BLENDMODE_ADD);
     list<Dot*>::iterator tit;

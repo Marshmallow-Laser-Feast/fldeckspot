@@ -10,6 +10,7 @@
 #include "vizConverse.h"
 #include "vizMoviePlayer.h"
 #include "ofxMidi.h"
+#include "OutputManager.h"
 
 class testApp : public ofBaseApp, public ofxMidiListener {
 public:
@@ -92,7 +93,8 @@ public:
     int  mMovieLength = 2300;
     int  mRanges [9] = {0,250, 588, 1065, 1299, 1536, 1742, 2350, mMovieLength};
    
-  
+    OutputManager outputManager;
+    
     enum ModeName {
         kModeNikeBeats,
         kModeNikeTune,

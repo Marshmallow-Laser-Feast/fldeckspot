@@ -522,6 +522,8 @@ void vizMoviePlayer::update(ofVec3f t) {
 void vizMoviePlayer::draw(){
     ofPushMatrix();
     ofPushStyle();
+    glDisable(GL_DEPTH_TEST);
+
     ofSetColor(255,255,255,255);
     if (mbBlendModeAdd) ofEnableBlendMode(OF_BLENDMODE_ADD);
     ofEnableAlphaBlending();

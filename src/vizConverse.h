@@ -22,7 +22,7 @@ public:
     void setup();
     
     void draw();
-    void drawFBO();
+    void drawContent();
     void exit();
     
     void keyPressed(int key);
@@ -81,7 +81,7 @@ public:
     // - - - - - - - - CAMERA
     ofEasyCam cam;
     ofCamera camTop;
-    ofFbo rgbaFbo;
+//    ofFbo rgbaFbo;
     ofVec3f camTopIdleRotation;
     float mCamOrbitLongitude;
     // - - - - - - - - PHYSICS

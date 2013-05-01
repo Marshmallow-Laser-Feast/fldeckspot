@@ -167,11 +167,11 @@ void vizConverse::setup(){
     //  - - - - - - - - - - FBO - - - - - - - - - - - - - - - - -
     
     // TV RENDER
-    rgbaFbo.allocate(DECK_WIDTH, DECK_HEIGHT, GL_RGBA, 4);
+//    rgbaFbo.allocate(DECK_WIDTH, DECK_HEIGHT, GL_RGBA, 4);
     //rgbaFbo.allocate(1920, 1080, GL_RGBA, 4);
-    rgbaFbo.begin();
-    ofClear(255,128,128,0);
-    rgbaFbo.end();
+//    rgbaFbo.begin();
+//    ofClear(255,128,128,0);
+//    rgbaFbo.end();
     
     //  - - - - - - - - - - CAMERA - - - - - - - - - - - - - - - - -
    
@@ -356,10 +356,10 @@ void vizConverse::update( ) {
     physicsConverse.update();
     
     //  - - - - - - - - - - FBO - - - - - - - - - - - - - - - - -
-    rgbaFbo.begin();
-    ofClear(0,68,128,0);
-    drawFBO();
-    rgbaFbo.end();
+//    rgbaFbo.begin();
+//    ofClear(0,68,128,0);  // TODO:
+//    drawFBO();
+//    rgbaFbo.end();
     
 }
 //--------------------------------------------------------------
@@ -384,7 +384,7 @@ void vizConverse::update(ofVec3f target) {
     
 }
 //--------------------------------------------------------------
-void vizConverse::drawFBO(){
+void vizConverse::drawContent(){
     ofSetColor(255);
     if (mbCamTop){
         camTop.begin();
@@ -576,7 +576,8 @@ void vizConverse::drawStripe (float x, float length, float thickness, float angl
 //--------------------------------------------------------------
 void vizConverse::draw(){
     ofEnableAlphaBlending();
-   
+    glDisable(GL_DEPTH_TEST);
+
     if (mbToggleShape){
         ofSetColor(mBgColor);
         ofRect(0,0,DECK_WIDTH ,DECK_HEIGHT);
@@ -596,7 +597,9 @@ void vizConverse::draw(){
         }
     }
     ofSetColor(255);
-    rgbaFbo.draw(0,0);
+//    rgbaFbo.draw(0,0);
+    drawContent();
+
     if (mbToggleOverlayImage) mOverlayImage->draw(0,0);
     if (mbToggleOverlayMovie && mOverlayMovie->isLoaded())  mOverlayMovie -> draw(640-mOverlayMovie->width/2,540-mOverlayMovie->height/2);
    

@@ -7,7 +7,7 @@
 #define MAIN_SCREEN_HEIGHT 1050
 //--------------------------------------------------------------
 void testApp::setup(){
-     // - - - - - - - - - - OF VARS - - - - - - - - -  - - - - -
+    // - - - - - - - - - - OF VARS - - - - - - - - -  - - - - -
     ofEnableSmoothing();
     ofSetCircleResolution(60);
     ofSetVerticalSync(false);   // put this on gui or keypress
@@ -15,7 +15,7 @@ void testApp::setup(){
     //ofToggleFullscreen();
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
-
+    
     // - - - - - - - - - - TWEENZOR SETUP - - - - - - - - -  - - - - -
 	Tweenzor::init();
     // - - - - - - - - - - TUIO SETUP - - - - - - - - -  - - - - -
@@ -24,7 +24,13 @@ void testApp::setup(){
 	ofAddListener(tuioClient.cursorRemoved,this,&testApp::tuioRemoved);
 	ofAddListener(tuioClient.cursorUpdated,this,&testApp::tuioUpdated);
     
-        
+    
+    outputManager.setup(2, 1280, 1080, GL_RGBA, 0);
+//    outputManager.outputs[0].rect.set(0, 0, 400, 300);
+    outputManager.outputs[1].rect.set(1280, 100, 128, 108);
+    outputManager.enabled = true;
+    
+    
     // - - - - - - - - - - OFX UI SETUP - - - - - - - - -  - - - - -
     float xInit = OFX_UI_GLOBAL_WIDGET_SPACING;
     float length = GUI_WIDTH-xInit;
@@ -59,12 +65,11 @@ void testApp::setup(){
     
     //  - - - - - - - - - - VIZ UI - - - - - - - - - - - - - - - - -
     gui->addWidgetDown(new ofxUILabel("visualisations", OFX_UI_FONT_SMALL));
-    vizNeedlesToggle = gui->addToggle("toggle vizNeedles", &mbToggleNeedles, dim, dim);
-    vizDotsToggle = gui->addToggle("toggle vizDots", &mbToggleDots, dim, dim);
-    vizPhysicsToggle = gui->addToggle("toggle vizPhysics", &mbTogglePhysics, dim, dim);
-    vizConverseToggle = gui->addToggle("toggle vizConverse", &mbToggleConverse, dim, dim);
-    vizMoviePlayerToggle = gui->addToggle("toggle vizMoviePlayer", &mbToggleMoviePlayer, dim, dim);
-
+    gui->addToggle("toggle vizNeedles", &mbToggleNeedles, dim, dim);
+    gui->addToggle("toggle vizDots", &mbToggleDots, dim, dim);
+    gui->addToggle("toggle vizPhysics", &mbTogglePhysics, dim, dim);
+    gui->addToggle("toggle vizConverse", &mbToggleConverse, dim, dim);
+    gui->addToggle("toggle vizMoviePlayer", &mbToggleMoviePlayer, dim, dim);
     //  - - - - - - - - - - VIDEO OVERLAY- - - - - - - - - - - - - - - - -
     gui->addToggle("toggle video overlay", &mbMainVideo, dim, dim);
     
@@ -153,7 +158,7 @@ void testApp::setup(){
     
     // - - - - - - SCENE RUNNER
     // 1:32 = 92* 25 = 2300
-   
+    
     gui->addWidgetDown(new ofxUIFPS(OFX_UI_FONT_SMALL));
     mg = (ofxUIMovingGraph *) gui->addWidgetDown(new ofxUIMovingGraph(length-xInit, 120, buffer, 256, 0, 400, "MOVING GRAPH"));
     ofAddListener(gui->newGUIEvent,this,&testApp::guiEvent);
@@ -162,27 +167,25 @@ void testApp::setup(){
     
     doShowColorbars = false;
     imageColorBars.loadImage("ColorBars.tif");
-
-    
-    
 }
+
 //------------------------------------------------------------
 bool testApp::setLEDColor(ofColor color) {
     // commented these out so we can play with hte gui in realtime
-//    if(mTargetColor != color) {
-//        
-//        ofLogNotice() << " LED COLOR SWITCH: mCurrentColor: " << mTargetColor << " " << " new Color: " << color << endl;
-        mTargetColor = color;
-//        
-//        return true;
-//    }
-//    return false;
+    //    if(mTargetColor != color) {
+    //
+    //        ofLogNotice() << " LED COLOR SWITCH: mCurrentColor: " << mTargetColor << " " << " new Color: " << color << endl;
+    mTargetColor = color;
+    //
+    //        return true;
+    //    }
+    //    return false;
     return true;
 }
 //------------------------------------------------------------
 bool testApp::setMode(ModeName newMode) {
     if(mCurrentMode != newMode) {
-      
+        
         ofLogNotice() << " MODE SWITCH: mCurrentMode: " << mCurrentMode << " " << " new Mode: " << newMode << endl;
         mCurrentMode = newMode;
         switch(mCurrentMode) {
@@ -225,8 +228,8 @@ bool testApp::setMode(ModeName newMode) {
                 
                 
             case kModeConverseFX:
-               
-
+                
+                
                 //load circular setting
                 mbToggleConverse = true;
                 converseViz->loadSettings(3);
@@ -290,19 +293,19 @@ void testApp::update(){
      kModeAdidasFX
      */
     if(mbMainVideo) {
-    mCurrentFrame = mainVideo.getCurrentFrame();
-    if (mainVideo.isPlaying())   movieSlider->setValue(mCurrentFrame);
-    
-    if     (ofInRange(mCurrentFrame, mRanges[1], mRanges[2])) setMode(kModeNikeBeats);
-    else if(ofInRange(mCurrentFrame, mRanges[2], mRanges[3])) setMode(kModeNikeTune);
-    else if(ofInRange(mCurrentFrame, mRanges[3], mRanges[4])) setMode(kModeConverseTune);
-    else if(ofInRange(mCurrentFrame, mRanges[4], mRanges[5])) setMode(kModeConverseFX);
-    else if(ofInRange(mCurrentFrame, mRanges[5], mRanges[6])) setMode(kModeAdidasBeats);
-    else if(ofInRange(mCurrentFrame, mRanges[6], mRanges[7])) setMode(kModeAdidasFX);
+        mCurrentFrame = mainVideo.getCurrentFrame();
+        if (mainVideo.isPlaying())   movieSlider->setValue(mCurrentFrame);
+        
+        if     (ofInRange(mCurrentFrame, mRanges[1], mRanges[2])) setMode(kModeNikeBeats);
+        else if(ofInRange(mCurrentFrame, mRanges[2], mRanges[3])) setMode(kModeNikeTune);
+        else if(ofInRange(mCurrentFrame, mRanges[3], mRanges[4])) setMode(kModeConverseTune);
+        else if(ofInRange(mCurrentFrame, mRanges[4], mRanges[5])) setMode(kModeConverseFX);
+        else if(ofInRange(mCurrentFrame, mRanges[5], mRanges[6])) setMode(kModeAdidasBeats);
+        else if(ofInRange(mCurrentFrame, mRanges[6], mRanges[7])) setMode(kModeAdidasFX);
     }
     
     //  - - - - - - - - - - LEDS - - - - - - - - - - - - - - - - -
-
+    
     if (ofInRange(mCurrentFrame, mLEDCues[0], mLEDCues[1])) setLEDColor(mStartColor);
     else if (ofInRange(mCurrentFrame, mLEDCues[1], mLEDCues[2])) setLEDColor(mNikeColor);
     else if (ofInRange(mCurrentFrame, mLEDCues[2], mLEDCues[3])) setLEDColor(mConverseColor);
@@ -310,14 +313,13 @@ void testApp::update(){
     else if (ofInRange(mCurrentFrame, mLEDCues[4], mLEDCues[5])) setLEDColor(mEndColor);
     
     mCurrentColor = mCurrentColor.lerp(mTargetColor, 0.1);  // TODO: make this number a GUI variable
-    ofLogNotice() << mCurrentColor;
     
     midiOut.sendControlChange(1, 1, mCurrentColor.r / 2);
     midiOut.sendControlChange(1, 2, mCurrentColor.g / 2);
     midiOut.sendControlChange(1, 3, mCurrentColor.b / 2);
     //  - - - - - - - - - - OFX UI - - - - - - - - - - - - - - - - -
     mg->addPoint(ofGetFrameRate());
-        
+    
     //  - - - - - - - - - - OFX TUIO - - - - - - - - - - - - - - - - -
     ofVec3f target;
     list<ofxTuioCursor*> l;
@@ -340,7 +342,7 @@ void testApp::update(){
         target = ofVec3f(mouseX, mouseY, 0);
     }
     
-    //  - - - - - - - - - - Visualisations- - - - - - - - - - - - - - - - - 
+    //  - - - - - - - - - - Visualisations- - - - - - - - - - - - - - - - -
     if (mbToggleNeedles){
         if (bUpdateTUIO) {
             compassNeedles->update(l);
@@ -379,69 +381,78 @@ void testApp::update(){
         }
         moviePlayerViz -> update();
     }
-//    if(mbToggleCapture){
-//        img.grabScreen(MAIN_SCREEN_WIDTH, 0, OUTPUT_WIDTH, OUTPUT_HEIGHT);
-//    }
-     if(mbTogglePhysics && mbToggleConverse) {
+    //    if(mbToggleCapture){
+    //        img.grabScreen(MAIN_SCREEN_WIDTH, 0, OUTPUT_WIDTH, OUTPUT_HEIGHT);
+    //    }
+    if(mbTogglePhysics && mbToggleConverse) {
         // physicsViz->setTextureFbo(converseViz->rgbaFbo);
-     }
+    }
     
-
+    
     if(mbMainVideo) mainVideo.update();
 }
 //--------------------------------------------------------------
 void testApp::draw(){
     ofBackground(0);
     //  - - - - - - - - - - Visualisations- - - - - - - - - - - - - - - - -
-    glPushMatrix();
-    bool b = ofGetWindowMode() == OF_FULLSCREEN;
-    if (b) {
-        if(mbToggle1440) {
-            ofTranslate(0, 0);
-        } else {
-            ofTranslate(MAIN_SCREEN_WIDTH, 0);
+    //    glPushMatrix();
+    //    bool b = ofGetWindowMode() == OF_FULLSCREEN;
+    //    if (b) {
+    //        if(mbToggle1440) {
+    //            ofTranslate(0, 0);
+    //        } else {
+    //            ofTranslate(MAIN_SCREEN_WIDTH, 0);
+    //        }
+    //    }
+    
+    //    if(mbToggleNeedles) ofTranslate(tuioOffsetX,tuioOffsetY);
+    
+    outputManager.begin();
+    {
+        ofClear(0);
+        if(mbToggleNeedles) compassNeedles->draw();
+        if(mbToggleConverse) converseViz->draw();
+        if(mbTogglePhysics) physicsViz->draw();
+        if(mbToggleMoviePlayer) moviePlayerViz->draw();
+        if(mbToggleDots) dots->draw();
+        
+        //    if(mbShowCursor) {
+        //        ofPushStyle();
+        //        ofSetColor(255);
+        //        ofSphere(mouseX, 0, mouseY, 4);
+        //        ofPopStyle();
+        //    }
+        //    if (mouseX > MAIN_SCREEN_WIDTH){
+        //        ofHideCursor();
+        //    } else {
+        //        ofShowCursor();
+        //    }
+        
+        // TODO: add gui options to disable etc
+        // TODO: add keyboard shortcuts to rewind, pause, play video, jump forward or backwawrd by 1 second
+        // TODO: display video time in gui
+        if (mbMainVideo) {
+            ofEnableAlphaBlending();
+            ofSetColor(255, 255, 255);
+            glDisable(GL_DEPTH_TEST);
+            mainVideo.draw(0, 0);
+        }
+        
+        if(doShowColorbars) {
+            ofDisableAlphaBlending();
+            ofSetColor(255, 255, 255);
+            glDisable(GL_DEPTH_TEST);
+            imageColorBars.draw(0, 0);
         }
     }
-  
-    if(mbToggleNeedles) ofTranslate(tuioOffsetX,tuioOffsetY);
-    if(mbToggleNeedles) compassNeedles->draw();
-    if(mbToggleConverse) converseViz->draw();
-    if(mbTogglePhysics) physicsViz->draw();
-    if(mbToggleMoviePlayer) moviePlayerViz->draw();
-    if(mbToggleDots) dots->draw();
-   
-//    if(mbShowCursor) {
-//        ofPushStyle();
-//        ofSetColor(255);
-//        ofSphere(mouseX, 0, mouseY, 4);
-//        ofPopStyle();
-//    }
-//    if (mouseX > MAIN_SCREEN_WIDTH){
-//        ofHideCursor();
-//    } else {
-//        ofShowCursor();
-//    }
+    outputManager.end();
     
-    // TODO: add gui options to disable etc
-    // TODO: add keyboard shortcuts to rewind, pause, play video, jump forward or backwawrd by 1 second
-    // TODO: display video time in gui
-    ofSetColor(255, 255, 255);
-    ofEnableAlphaBlending();
-    if (mbMainVideo) {
-        mainVideo.draw(0, 0);
-    }
+    outputManager.draw();
     
-    if(doShowColorbars) {
-        ofDisableAlphaBlending();
-        ofSetColor(255, 255, 255);
-        imageColorBars.draw(0, 0);
-    }
-
-    glPopMatrix();
+    //    glPopMatrix();
     
-    ofSetColor(255);
-       //cout << "midiMessage.value: " << midiMessage.value << endl;
-   // draw midi
+    //cout << "midiMessage.value: " << midiMessage.value << endl;
+    // draw midi
     //ofRect(ofGetHeight()-20, 20, ofMap(midiMessage.value, 0, 127, 0, ofGetWidth()-40), 20);
 }
 //--------------------------------------------------------------
@@ -466,7 +477,7 @@ void testApp::tuioRemoved(ofxTuioCursor &tuioCursor){
 }
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-     cout << "testApp::keyPressed key: " << key << endl;
+    cout << "testApp::keyPressed key: " << key << endl;
     switch(key) {
         case 'c':
             doShowColorbars ^= true;
@@ -523,7 +534,7 @@ void testApp::mouseDragged(int x, int y, int button){
 }
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-   
+    
 }
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
@@ -532,14 +543,14 @@ void testApp::mouseReleased(int x, int y, int button){
 }
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h){
-
+    
 }
 //--------------------------------------------------------------
 void testApp::gotMessage(ofMessage msg){
-
+    
 }
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
+void testApp::dragEvent(ofDragInfo dragInfo){
 }
 //--------------------------------------------------------------
 void testApp::guiEvent(ofxUIEventArgs &e){
@@ -551,8 +562,8 @@ void testApp::guiEvent(ofxUIEventArgs &e){
         ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
         mNikeColor =  sampler->getColor();
     } else if(name == "adidas color"){
-            ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
-            mAdidasColor =  sampler->getColor();
+        ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
+        mAdidasColor =  sampler->getColor();
     } else if(name == "converse color"){
         ofxUIImageSampler *sampler = (ofxUIImageSampler *) e.widget;
         mConverseColor =  sampler->getColor();
@@ -568,7 +579,7 @@ void testApp::guiEvent(ofxUIEventArgs &e){
         
         tuioOffsetY = tuioOffsetX = 0;
     } else if (name == "prev range"){
-       
+        
     } else if (name == "next range"){
         
     } else if (name == "scrub"){
@@ -586,7 +597,7 @@ void testApp::guiEvent(ofxUIEventArgs &e){
     } else if (name == "pause"){
         mainVideo.stop();
     }
-        
+    
 }
 //--------------------------------------------------------------
 void testApp::newMidiMessage(ofxMidiMessage& msg) {
