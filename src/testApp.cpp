@@ -28,7 +28,7 @@ void testApp::setup(){
     outputManager.setup(2, 1280, 1080, GL_RGBA, 0);
     outputManager.outputs[0].rect.set(0, 0, 1280, 1080);
     outputManager.outputs[1].rect.set(1280, 0, 1280/10, 1080/10);
-    outputManager.outputs[1].rot.y = 180;
+//    outputManager.outputs[1].rot.y = 180;
     outputManager.enabled = true;
     
     
@@ -481,6 +481,11 @@ void testApp::tuioRemoved(ofxTuioCursor &tuioCursor){
 void testApp::keyPressed(int key){
     cout << "testApp::keyPressed key: " << key << endl;
     switch(key) {
+            // for testing
+        case '*': outputManager.outputs[0].bRot180 ^= true; break;
+        case '(': outputManager.outputs[0].bFlipX ^= true; break;
+        case ')': outputManager.outputs[0].bFlipY ^= true; break;
+            
         case 'c':
             doShowColorbars ^= true;
             break;
