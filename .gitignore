@@ -17,3 +17,5 @@ bin/*.app
 bin/*.app/*
 
 *.xcuserstate
+
+.DS_Store
