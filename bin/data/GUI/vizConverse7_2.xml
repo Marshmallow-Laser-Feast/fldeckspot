@@ -1,11 +1,11 @@
 <Widget>
     <Kind>28</Kind>
     <Name>mBgColor</Name>
-    <XValue>0.000000000</XValue>
-    <YValue>0.765432119</YValue>
-    <RColor>1</RColor>
-    <GColor>0</GColor>
-    <BColor>2</BColor>
+    <XValue>0.611111104</XValue>
+    <YValue>0.580246925</YValue>
+    <RColor>58</RColor>
+    <GColor>136</GColor>
+    <BColor>255</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
@@ -21,11 +21,11 @@
 <Widget>
     <Kind>28</Kind>
     <Name>mStripeInsideColor</Name>
-    <XValue>0.358024687</XValue>
-    <YValue>0.000000000</YValue>
-    <RColor>182</RColor>
-    <GColor>1</GColor>
-    <BColor>0</BColor>
+    <XValue>1.000000000</XValue>
+    <YValue>0.679012358</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
+    <BColor>255</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
@@ -51,7 +51,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mLineStepInside</Name>
-    <Value>5.842391491</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -76,17 +76,17 @@
 <Widget>
     <Kind>4</Kind>
     <Name>gravity</Name>
-    <Value>2.608695507</Value>
+    <Value>5.489130497</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mRadius</Name>
-    <Value>203.858688354</Value>
+    <Value>271.630432129</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>drag</Name>
-    <Value>0.956956506</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -96,5 +96,5 @@
 <Widget>
     <Kind>4</Kind>
     <Name>rest length</Name>
-    <Value>216.467391968</Value>
+    <Value>186.521728516</Value>
 </Widget>

@@ -690,9 +690,9 @@ void vizPhysics::mouseMoved(int x, int y ){
 }
 //--------------------------------------------------------------
 void vizPhysics::exit() {
-    gui->saveSettings(mXmlPath);
-    gui2->saveSettings(mXmlPath2);
-    gui3->saveSettings(mXmlPath3);
+    //gui->saveSettings(mXmlPath);
+    //gui2->saveSettings(mXmlPath2);
+    //gui3->saveSettings(mXmlPath3);
     ofLogNotice() << "vizPhysics::exit() XML Settings saved." << endl;
     delete gui,gui2, gui3;
 }

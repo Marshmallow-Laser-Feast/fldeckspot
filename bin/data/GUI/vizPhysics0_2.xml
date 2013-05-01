@@ -16,31 +16,26 @@
 <Widget>
     <Kind>28</Kind>
     <Name>mBoxColor</Name>
-    <XValue>0.796296299</XValue>
-    <YValue>0.000000000</YValue>
-    <RColor>255</RColor>
-    <GColor>155</GColor>
-    <BColor>153</BColor>
+    <XValue>0.129629627</XValue>
+    <YValue>0.543209851</YValue>
+    <RColor>0</RColor>
+    <GColor>41</GColor>
+    <BColor>66</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>mbToggleMaterial</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>mbToggleTexture DOTS</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>mbToggleTexture2 STRIPES</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>mbToggleFboTexture</Name>
+    <Name>mbToggleTexture DOTS</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleTexture2 STRIPES</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
@@ -51,21 +46,21 @@
 <Widget>
     <Kind>28</Kind>
     <Name>mMaterialDiffuseColor</Name>
-    <XValue>0.586419761</XValue>
+    <XValue>0.512345672</XValue>
     <YValue>1.000000000</YValue>
-    <RColor>152</RColor>
-    <GColor>153</GColor>
-    <BColor>153</BColor>
+    <RColor>130</RColor>
+    <GColor>129</GColor>
+    <BColor>129</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>28</Kind>
     <Name>mMaterialSpecularColor</Name>
-    <XValue>0.858024716</XValue>
-    <YValue>1.000000000</YValue>
-    <RColor>228</RColor>
-    <GColor>229</GColor>
-    <BColor>228</BColor>
+    <XValue>0.987654328</XValue>
+    <YValue>0.629629612</YValue>
+    <RColor>251</RColor>
+    <GColor>252</GColor>
+    <BColor>255</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
@@ -82,9 +77,9 @@
     <Kind>28</Kind>
     <Name>mMaterialAmbientColor</Name>
     <XValue>0.000000000</XValue>
-    <YValue>0.271604925</YValue>
+    <YValue>0.555555582</YValue>
     <RColor>0</RColor>
-    <GColor>2</GColor>
-    <BColor>0</BColor>
+    <GColor>1</GColor>
+    <BColor>2</BColor>
     <AColor>255</AColor>
 </Widget>

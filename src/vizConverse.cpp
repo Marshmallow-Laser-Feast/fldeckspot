@@ -748,8 +748,8 @@ void vizConverse::updateMidi (ofxMidiMessage m){
 //--------------------------------------------------------------
 void vizConverse::exit() {
     ofLogNotice() << "vizConverse::exit()" << endl;
-    gui->saveSettings(mXmlPath);
-    gui2->saveSettings(mXmlPath2);
+    //gui->saveSettings(mXmlPath);
+    //gui2->saveSettings(mXmlPath2);
     delete gui;
     delete gui2;
 }
@@ -768,8 +768,8 @@ void vizConverse::loadSettings(int id) {
    
     sprintf(selectedPresetPath2, "GUI/%s_2.xml", selectedPreset);
     
-    gui->saveSettings(selectedPresetPath);
-    gui2->saveSettings(selectedPresetPath2);
+    gui->loadSettings(selectedPresetPath);
+    gui2->loadSettings(selectedPresetPath2);
 }
 //--------------------------------------------------------------
 //void vizConverse::mouseMoved(int x, int y ){

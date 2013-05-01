@@ -685,7 +685,7 @@ void vizMoviePlayer::loadSettings (int id){
     sprintf (selectedPreset, "%s%i", mVizName, id);
     sprintf(selectedPresetPath, "GUI/%s.xml", selectedPreset);
         
-    ofLogNotice() << mVizIdName << "guiEvent:: loadSettings:" << selectedPresetPath << endl;
+    ofLogNotice() << mVizIdName << "vizMoviePlayer::loadSettings:" << selectedPresetPath << endl;
    
     gui->loadSettings(selectedPresetPath);
 }
@@ -693,7 +693,7 @@ void vizMoviePlayer::loadSettings (int id){
 void vizMoviePlayer::exit() {
     ofLogNotice() << "vizMoviePlayer::exit()" << endl;
     //delete mOverlayMovie;
-    gui->saveSettings(mXmlPath);
+    //gui->saveSettings(mXmlPath);
     delete gui;
 }
 

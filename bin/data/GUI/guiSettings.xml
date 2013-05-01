@@ -26,7 +26,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>toggle vizPhysics</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -36,7 +36,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>toggle vizMoviePlayer</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -46,46 +46,46 @@
 <Widget>
     <Kind>4</Kind>
     <Name>scrub</Name>
-    <Value>2229.878173828</Value>
+    <Value>1584.756103516</Value>
 </Widget>
 <Widget>
     <Kind>28</Kind>
-    <Name>strart color</Name>
-    <XValue>0.500000000</XValue>
-    <YValue>0.493827164</YValue>
-    <RColor>5</RColor>
-    <GColor>233</GColor>
+    <Name>start color</Name>
+    <XValue>1.000000000</XValue>
+    <YValue>0.074074075</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
     <BColor>255</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>28</Kind>
-    <Name>converse color</Name>
-    <XValue>0.500000000</XValue>
-    <YValue>0.493827164</YValue>
-    <RColor>5</RColor>
+    <Name>nike color</Name>
+    <XValue>0.456790119</XValue>
+    <YValue>0.283950627</YValue>
+    <RColor>58</RColor>
     <GColor>233</GColor>
-    <BColor>255</BColor>
+    <BColor>1</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>28</Kind>
     <Name>adidas color</Name>
-    <XValue>0.382716060</XValue>
-    <YValue>0.172839507</YValue>
-    <RColor>184</RColor>
-    <GColor>196</GColor>
-    <BColor>0</BColor>
+    <XValue>0.592592597</XValue>
+    <YValue>0.518518507</YValue>
+    <RColor>49</RColor>
+    <GColor>207</GColor>
+    <BColor>255</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>28</Kind>
     <Name>converse color</Name>
-    <XValue>0.679012358</XValue>
-    <YValue>0.271604925</YValue>
-    <RColor>149</RColor>
-    <GColor>255</GColor>
-    <BColor>93</BColor>
+    <XValue>0.395061731</XValue>
+    <YValue>0.814814806</YValue>
+    <RColor>203</RColor>
+    <GColor>1</GColor>
+    <BColor>189</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>

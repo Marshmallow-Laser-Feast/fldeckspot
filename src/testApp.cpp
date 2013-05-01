@@ -39,7 +39,7 @@ void testApp::setup(){
     
     ofColor cb = ofColor(0,0,0);
     ofColor co = ofColor(84,0,255);
-    ofColor coh = ofColor(0,0,255);
+    ofColor coh = ofColor(128,128,255);
     ofColor cf = ofColor(255, 255,255);
     ofColor cfh = ofColor(128,255,128);
     ofColor cp = ofColor(0,0,255);
@@ -233,8 +233,9 @@ bool testApp::setMode(ModeName newMode) {
                 
                 
                 //load circular setting
+                converseViz->loadSettings(1);
                 mbToggleConverse = true;
-                converseViz->loadSettings(3);
+                
                 
                 mbToggleDots = false;
                 mbToggleMoviePlayer = false;
@@ -245,7 +246,7 @@ bool testApp::setMode(ModeName newMode) {
             case kModeAdidasBeats:
                 //movieplayer - load movie grid
                 
-                moviePlayerViz->loadSettings(1);
+                moviePlayerViz->loadSettings(10);
                 mbToggleMoviePlayer = true;
                 
                 mbToggleDots = false;
@@ -257,13 +258,14 @@ bool testApp::setMode(ModeName newMode) {
             case kModeAdidasFX:
                 //stripey physics
                 //load setting, change texture
-                physicsViz->loadSettings(1);
+                //physicsViz->loadSettings(1);
+                converseViz->loadSettings(0);
+                mbToggleConverse = true;
                 
-                mbTogglePhysics = true;
+                mbTogglePhysics = false;
                 
                 mbToggleMoviePlayer = false;
                 mbToggleDots = false;
-                mbToggleConverse = false;
                 mbToggleNeedles = false;
                 
                 break;

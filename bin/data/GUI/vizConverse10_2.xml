@@ -1,21 +1,21 @@
 <Widget>
     <Kind>28</Kind>
     <Name>mBgColor</Name>
-    <XValue>0.611111104</XValue>
-    <YValue>0.580246925</YValue>
-    <RColor>58</RColor>
-    <GColor>136</GColor>
-    <BColor>255</BColor>
+    <XValue>0.388888896</XValue>
+    <YValue>0.000000000</YValue>
+    <RColor>198</RColor>
+    <GColor>2</GColor>
+    <BColor>0</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>
     <Kind>28</Kind>
     <Name>mStripeOutsideColor</Name>
-    <XValue>1.000000000</XValue>
-    <YValue>1.000000000</YValue>
-    <RColor>254</RColor>
-    <GColor>254</GColor>
-    <BColor>254</BColor>
+    <XValue>0.358024687</XValue>
+    <YValue>0.580246925</YValue>
+    <RColor>0</RColor>
+    <GColor>73</GColor>
+    <BColor>183</BColor>
     <AColor>255</AColor>
 </Widget>
 <Widget>

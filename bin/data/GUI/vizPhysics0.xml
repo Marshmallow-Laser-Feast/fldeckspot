@@ -1,7 +1,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>select preset</Name>
-    <Value>1.141304374</Value>
+    <Value>10.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -11,7 +11,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mCamTopY</Name>
-    <Value>-905.434753418</Value>
+    <Value>-657.608703613</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -56,7 +56,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>mbTogglePulse</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -66,7 +66,7 @@
 <Widget>
     <Kind>2</Kind>
     <Name>mbTogglePointLight</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -76,12 +76,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mBoxSize</Name>
-    <Value>6.380434513</Value>
+    <Value>1.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mSphereSize</Name>
-    <Value>16.065216064</Value>
+    <Value>10.684782982</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -101,7 +101,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>drag</Name>
-    <Value>0.967717409</Value>
+    <Value>0.935434818</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
