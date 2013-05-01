@@ -606,32 +606,43 @@ void vizConverse::draw(){
     ofDisableAlphaBlending();
 }
 //--------------------------------------------------------------
-void vizConverse::addOutsideForce(ofVec3f target,float intensity, float range) {
+void vizConverse::addOutsideForce(ofVec3f target, float intensity, float range) {
     ofVec3f dif, targetDif, difNorm, projPos;
-    for (int i = 0; i<NUM_STRIPES; i++){
+    int counter  =0;
+    for (int i = 0; i<insideParticles.size(); i++){
         
         msa::physics::Particle3D*p = insideParticles.at(i);
+        msa::physics::Particle3D*pTop = topParticles.at(i);
         //msa::physics::Spring3D *s = outsideSprings.at(i);
         
         projPos = ofVec3f(p->getPosition().x, 0, p->getPosition().z);
+        
         if (mbToggleShape){
-            dif = projPos-center->getPosition();
+            //cout << "addOutsideForce: projPos: " << projPos << endl;
+            if (pTop->getPosition().distanceSquared(center->getPosition()) < target.distanceSquared(center->getPosition()) ){
+                dif = center->getPosition()-projPos;
+            } else {
+                dif = projPos-center->getPosition();
+            }
         }else {
             dif = ofVec3f(p->getPosition().x-mouseX, 0, 0);
         }
         
         difNorm = dif.getNormalized();
-        
+        //cout << "addOutsideForce: projPos: " << projPos << " target: " << target << endl;
         targetDif = target - projPos;
         float dist = targetDif.length();
-        //cout << "addOutsideForce: dif: " << dif.length() << endl;
-        if ( dist < range && dist > 0) {
-            cout << "found close particles! projPos: "<< projPos <<" id: "  << i << " force: " << difNorm*intensity << endl;
+        cout << "addOutsideForce: dist: " << dist << endl;
+        if ( dist < range) {
+            //cout << "found close particles! projPos: "<< projPos <<" id: "  << i << " force: " << difNorm*intensity << endl;
             p->addVelocity(difNorm*intensity);
             //p->addVelocity(ofVec3f(3,0,0));
+            counter ++;
+           
         }
     }
-    cout << "addOutsideForce: projPos: " << projPos << " mouseY: " << mouseY << endl;
+    if (counter == 0)  cout << "vizConverse::addOutsideForcenot in range" << endl;
+    
 }
 //--------------------------------------------------------------
 void vizConverse::addRandomForce(float f) {
@@ -732,7 +743,7 @@ void vizConverse::guiEvent(ofxUIEventArgs &e){
 }
 //--------------------------------------------------------------
 void vizConverse::mouseMoved(int x, int y ) {
-    ofLogNotice() << "mouseX" << mouseX << endl;
+    //ofLogNotice() << "mouseX" << mouseX << endl;
     mouseX  = x-DECK_WIDTH/2;
     mouseY =  (-y+DECK_HEIGHT/2)*(-1);
     
@@ -740,7 +751,7 @@ void vizConverse::mouseMoved(int x, int y ) {
 //--------------------------------------------------------------
 void vizConverse::updateMidi (ofxMidiMessage m){
     if(m.control == 1){
-        ofLogNotice() << "vizConverse::updateMidi() value: " << m.value << endl;
+        //ofLogNotice() << "vizConverse::updateMidi() value: " << m.value << endl;
         float v = ofMap(m.value, 0, 127, 0, 10);
         mInnerStripeRadiusMax = ofLerp(mInnerStripeRadiusMax, v,0.8);
     }

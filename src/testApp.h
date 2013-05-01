@@ -53,12 +53,14 @@ public:
     ofxUIToggle* vizDotsToggle;
     ofxUIToggle* vizMoviePlayerToggle;
     
-    //- - - - - - - - -
+    //- - - - - - - - - UI
     ofColor mBgColor;
     bool bUpdateTUIO, mbToggleCapture,
     mbShowCursor, mbToggleDots,
     mbToggleNeedles, mbTogglePhysics,
     mbToggleConverse, mbToggleMoviePlayer, mbToggle1440;
+    
+    // - - - -
     
     //- - - - - - - Visualisations
     vizCompassNeedles* compassNeedles;
