@@ -25,3 +25,7 @@ Sketch06.xcodeproj/project.xcworkspace/xcuserdata/mocomatics.xcuserdatad/UserInt
 Sketch06.xcodeproj/project.xcworkspace/xcuserdata/mocomatics.xcuserdatad/UserInterfaceState.xcuserstate
 
 *.xcuserstate
+
+*.xcbkptlist
+
+artnet/ArtNet-sender test~.qtz

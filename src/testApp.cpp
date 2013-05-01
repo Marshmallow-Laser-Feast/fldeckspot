@@ -81,9 +81,9 @@ void testApp::setup(){
     m_imgGradient.loadImage("img/gradient_162x81.png");
     
     gui->addWidgetDown(new ofxUILabel("start color", OFX_UI_FONT_SMALL));
-    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "strart color"));
-    gui->addWidgetDown(new ofxUILabel("converse color", OFX_UI_FONT_SMALL));
-    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "converse color"));
+    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "start color"));
+    gui->addWidgetDown(new ofxUILabel("nike color", OFX_UI_FONT_SMALL));
+    gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "nike color"));
     gui->addWidgetDown(new ofxUILabel("adidas color", OFX_UI_FONT_SMALL));
     gui->addWidgetDown(new ofxUIImageSampler(m_imgGradient.getWidth(), m_imgGradient.getHeight(), &m_imgGradient, "adidas color"));
     gui->addWidgetDown(new ofxUILabel("converse color", OFX_UI_FONT_SMALL));
@@ -149,6 +149,7 @@ void testApp::setup(){
 	// print received messages to the console
 	midiIn.setVerbose(true);
     
+    midiOut.openPort();
     
     // - - - - - - SCENE RUNNER
     // 1:32 = 92* 25 = 2300
@@ -167,14 +168,16 @@ void testApp::setup(){
 }
 //------------------------------------------------------------
 bool testApp::setLEDColor(ofColor color) {
-    if(mCurrentColor != color) {
-        
-        ofLogNotice() << " LED COLOR SWITCH: mCurrentColor: " << mCurrentColor << " " << " new Color: " << color << endl;
-        mCurrentColor = color;
-        
-        return true;
-    }
-    return false;
+    // commented these out so we can play with hte gui in realtime
+//    if(mTargetColor != color) {
+//        
+//        ofLogNotice() << " LED COLOR SWITCH: mCurrentColor: " << mTargetColor << " " << " new Color: " << color << endl;
+        mTargetColor = color;
+//        
+//        return true;
+//    }
+//    return false;
+    return true;
 }
 //------------------------------------------------------------
 bool testApp::setMode(ModeName newMode) {
@@ -299,10 +302,12 @@ void testApp::update(){
     else if (ofInRange(mCurrentFrame, mLEDCues[3], mLEDCues[4])) setLEDColor(mAdidasColor);
     else if (ofInRange(mCurrentFrame, mLEDCues[4], mLEDCues[5])) setLEDColor(mEndColor);
     
+    mCurrentColor = mCurrentColor.lerp(mTargetColor, 0.1);  // TODO: make this number a GUI variable
+    ofLogNotice() << mCurrentColor;
     
-    midiOut.sendControlChange(1, 1, mCurrentColor.r);
-    midiOut.sendControlChange(1, 2, mCurrentColor.g);
-    midiOut.sendControlChange(1, 3, mCurrentColor.b);
+    midiOut.sendControlChange(1, 1, mCurrentColor.r / 2);
+    midiOut.sendControlChange(1, 2, mCurrentColor.g / 2);
+    midiOut.sendControlChange(1, 3, mCurrentColor.b / 2);
     //  - - - - - - - - - - OFX UI - - - - - - - - - - - - - - - - -
     mg->addPoint(ofGetFrameRate());
         
