@@ -36,17 +36,17 @@
 <Widget>
     <Kind>2</Kind>
     <Name>toggle Converse</Name>
-    <Value>0</Value>
-</Widget>
-<Widget>
-    <Kind>2</Kind>
-    <Name>toggle MoviePlayer</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>toggle 1440</Name>
+    <Name>toggle MoviePlayer</Name>
     <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>toggle 1440</Name>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>

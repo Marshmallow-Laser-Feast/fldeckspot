@@ -212,7 +212,7 @@ bool testApp::setMode(ModeName newMode) {
             case kModeAdidasBeats:
                 //movieplayer - load movie grid
                 
-                 moviePlayerViz->loadSettings(10);
+                moviePlayerViz->loadSettings(1);
                 mbToggleMoviePlayer = true;
                 
                 mbToggleDots = false;
@@ -225,6 +225,7 @@ bool testApp::setMode(ModeName newMode) {
                 //stripey physics
                 //load setting, change texture
                 physicsViz->loadSettings(1);
+                
                 mbTogglePhysics = true;
                 
                 mbToggleMoviePlayer = false;

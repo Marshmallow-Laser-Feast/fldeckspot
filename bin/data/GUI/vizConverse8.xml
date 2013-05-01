@@ -11,7 +11,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mCamTopY</Name>
-    <Value>-791.847839355</Value>
+    <Value>-977.717407227</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -51,7 +51,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mOuterStripeRadiusMax</Name>
-    <Value>-3.152173996</Value>
+    <Value>-2.173913002</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -76,12 +76,12 @@
 <Widget>
     <Kind>4</Kind>
     <Name>mOuterStripeThickness</Name>
-    <Value>23.317445755</Value>
+    <Value>4.736685276</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>mInnerStripeThickness</Name>
-    <Value>23.643424988</Value>
+    <Value>26.740219116</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
