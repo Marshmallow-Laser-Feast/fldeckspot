@@ -31,12 +31,12 @@
 <Widget>
     <Kind>2</Kind>
     <Name>toggle Physics</Name>
-    <Value>0</Value>
+    <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
     <Name>toggle Converse</Name>
-    <Value>1</Value>
+    <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -56,5 +56,5 @@
 <Widget>
     <Kind>4</Kind>
     <Name>scrub</Name>
-    <Value>1429.000000000</Value>
+    <Value>1772.000000000</Value>
 </Widget>

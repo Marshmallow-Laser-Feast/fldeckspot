@@ -104,10 +104,14 @@ void testApp::setup(){
     moviePlayerViz = new vizMoviePlayer();
     moviePlayerViz->setup();
     
-
-    mainVideo.setPixelFormat(OF_PIXELS_RGBA);
-    mainVideo.loadMovie("master overlay/Square_Output_Master_Edit_001.mov");
-    mainVideo.setLoopState(OF_LOOP_NONE);
+    // load master overlay movie
+    {
+        ofDirectory dir;
+        dir.listDir("master overlay");
+        mainVideo.setPixelFormat(OF_PIXELS_RGBA);
+        mainVideo.loadMovie(dir.getPath(0));
+        mainVideo.setLoopState(OF_LOOP_NONE);
+    }
     
     // - - - - - - MOVIE GRABBING - - - - - - -
     //sprintf(mCapturePath, "capturing/take_%i", int(mTakeNum));
