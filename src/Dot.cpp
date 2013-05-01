@@ -25,11 +25,13 @@ void Dot::setVideo(string path){
     mbVideo = true;
     mVideoPlayer =  new ofVideoPlayer();
     mVideoPlayer->setPixelFormat(OF_PIXELS_RGBA);
+//    mVideoPlayer->getTextureReference().clear();
     mVideoPlayer->loadMovie(path);
-    mVideoPlayer->setSpeed(1);
-    mVideoPlayer->play();
+//    mVideoPlayer->setSpeed(1);
+//    mVideoPlayer->play();
     //mVideoPlayer->firstFrame();
-    //mVideoPlayer->setFrame(0);
+    mVideoPlayer->setFrame(0);
+    mVideoPlayer->update();
     
     width = mVideoPlayer->width;
     height = mVideoPlayer->height;
