@@ -25,7 +25,7 @@ void testApp::setup(){
 	ofAddListener(tuioClient.cursorUpdated,this,&testApp::tuioUpdated);
     
     
-    outputManager.setup(2, 1280, 1080, GL_RGBA, 0);
+    outputManager.setup(2, 1280, 1080, GL_RGBA, 4);
     outputManager.outputs[0].rect.set(0, 0, 1280, 1080);
     outputManager.outputs[1].rect.set(1280, 0, 1280/10, 1080/10);
 //    outputManager.outputs[1].rot.y = 180;
