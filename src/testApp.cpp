@@ -26,8 +26,9 @@ void testApp::setup(){
     
     
     outputManager.setup(2, 1280, 1080, GL_RGBA, 0);
-//    outputManager.outputs[0].rect.set(0, 0, 400, 300);
-    outputManager.outputs[1].rect.set(1280, 100, 128, 108);
+    outputManager.outputs[0].rect.set(0, 0, 1280, 1080);
+    outputManager.outputs[1].rect.set(1280, 0, 1280/10, 1080/10);
+    outputManager.outputs[1].rot.y = 180;
     outputManager.enabled = true;
     
     
@@ -65,11 +66,12 @@ void testApp::setup(){
     
     //  - - - - - - - - - - VIZ UI - - - - - - - - - - - - - - - - -
     gui->addWidgetDown(new ofxUILabel("visualisations", OFX_UI_FONT_SMALL));
-    gui->addToggle("toggle vizNeedles", &mbToggleNeedles, dim, dim);
-    gui->addToggle("toggle vizDots", &mbToggleDots, dim, dim);
-    gui->addToggle("toggle vizPhysics", &mbTogglePhysics, dim, dim);
-    gui->addToggle("toggle vizConverse", &mbToggleConverse, dim, dim);
-    gui->addToggle("toggle vizMoviePlayer", &mbToggleMoviePlayer, dim, dim);
+    vizNeedlesToggle = gui->addToggle("toggle vizNeedles", &mbToggleNeedles, dim, dim);
+    vizDotsToggle = gui->addToggle("toggle vizDots", &mbToggleDots, dim, dim);
+    vizPhysicsToggle = gui->addToggle("toggle vizPhysics", &mbTogglePhysics, dim, dim);
+    vizConverseToggle = gui->addToggle("toggle vizConverse", &mbToggleConverse, dim, dim);
+    vizMoviePlayerToggle = gui->addToggle("toggle vizMoviePlayer", &mbToggleMoviePlayer, dim, dim);
+
     //  - - - - - - - - - - VIDEO OVERLAY- - - - - - - - - - - - - - - - -
     gui->addToggle("toggle video overlay", &mbMainVideo, dim, dim);
     
