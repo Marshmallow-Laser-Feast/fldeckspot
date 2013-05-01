@@ -32,7 +32,7 @@ public:
     void setTextureRef (ofTexture* tex);
     // - - - - - - BASE GUI
     int _id;
-    void updateMesh();
+    void drawMesh();
     void drawScene();
     //ofRectangle viewMain;
     ofFbo rgbaFbo;
