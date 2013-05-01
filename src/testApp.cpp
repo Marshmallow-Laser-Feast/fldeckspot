@@ -524,10 +524,10 @@ void testApp::guiEvent(ofxUIEventArgs &e){
             mainVideo.setFrame(int(slider->getScaledValue()));
         }
         
+    }  else if (name == "play"){
+        mainVideo.play();
     } else if (name == "pause"){
         mainVideo.stop();
-    } else if (name == "play"){
-        mainVideo.play();
     }
         
 }

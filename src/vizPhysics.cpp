@@ -708,6 +708,7 @@ void vizPhysics::drawMesh () {
             //left top
             msa::physics::Particle3D *lt = particles[i];
             ofVec3f posLT = lt->getPosition();
+            // ofColor colLT = mVertexColor/255.0 - lt->getVelocity().length()*mPulseIntensity*mPulseColor;
             
             if(y < gridResY - 1 && x < gridResX - 1) {
                 //right top
