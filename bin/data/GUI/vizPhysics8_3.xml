@@ -1,0 +1,65 @@
+<Widget>
+    <Kind>4</Kind>
+    <Name>select preset</Name>
+    <Value>8.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSpotLightPosX</Name>
+    <Value>17.391296387</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSpotLightPosY</Name>
+    <Value>-573.913085938</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSpotLightPosZ</Name>
+    <Value>800.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSpotLightRotX</Name>
+    <Value>19.565216064</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSpotLightRotY</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSpotLightRotZ</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mSpotLightDiffuseColor</Name>
+    <XValue>1.000000000</XValue>
+    <YValue>0.444444448</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mSpotLightSpecularColor</Name>
+    <XValue>1.000000000</XValue>
+    <YValue>0.679012358</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mVertexColor</Name>
+    <XValue>0.543209851</XValue>
+    <YValue>1.000000000</YValue>
+    <RColor>140</RColor>
+    <GColor>140</GColor>
+    <BColor>140</BColor>
+    <AColor>255</AColor>
+</Widget>

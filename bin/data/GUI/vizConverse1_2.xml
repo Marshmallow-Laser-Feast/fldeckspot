@@ -1,0 +1,100 @@
+<Widget>
+    <Kind>28</Kind>
+    <Name>mBgColor</Name>
+    <XValue>0.388888896</XValue>
+    <YValue>0.000000000</YValue>
+    <RColor>198</RColor>
+    <GColor>2</GColor>
+    <BColor>0</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mStripeOutsideColor</Name>
+    <XValue>0.358024687</XValue>
+    <YValue>0.580246925</YValue>
+    <RColor>0</RColor>
+    <GColor>73</GColor>
+    <BColor>183</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mStripeInsideColor</Name>
+    <XValue>1.000000000</XValue>
+    <YValue>0.679012358</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mPhysicsColor</Name>
+    <XValue>0.000000000</XValue>
+    <YValue>0.864197552</YValue>
+    <RColor>3</RColor>
+    <GColor>0</GColor>
+    <BColor>1</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mPhysicsLineColor</Name>
+    <XValue>0.043209877</XValue>
+    <YValue>0.308641970</YValue>
+    <RColor>2</RColor>
+    <GColor>22</GColor>
+    <BColor>0</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mLineStepInside</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mLineStepOutside</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSphereSize</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mLineThickness</Name>
+    <Value>1.793478251</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>toggle physics</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>gravity</Name>
+    <Value>5.489130497</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mRadius</Name>
+    <Value>271.630432129</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>drag</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>strength</Name>
+    <Value>0.554793477</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>rest length</Name>
+    <Value>186.521728516</Value>
+</Widget>

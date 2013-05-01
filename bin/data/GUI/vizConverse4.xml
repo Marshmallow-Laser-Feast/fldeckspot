@@ -1,0 +1,125 @@
+<Widget>
+    <Kind>4</Kind>
+    <Name>select preset</Name>
+    <Value>4.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbCamTop</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mCamTopY</Name>
+    <Value>-781.521728516</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleShape</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleOverlayImage</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleOverlayMovie</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mFlipRadius</Name>
+    <Value>295.652160645</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mOuterStripeRadiusMin</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mOuterStripeRadiusMax</Name>
+    <Value>448.472808838</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mInnerStripeRadiusMin</Name>
+    <Value>0.021739244</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mInnerStripeRadiusMax</Name>
+    <Value>1.195652246</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mOuterStripeThickness</Name>
+    <Value>2.291847706</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mInnerStripeThickness</Name>
+    <Value>7.670489311</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mStripeOffset</Name>
+    <Value>0.703913033</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSecondRingRadiusMin</Name>
+    <Value>1.304347992</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSecondRingRadiusMax</Name>
+    <Value>1.630434990</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mStripeOffsetAngle</Name>
+    <Value>1.878261566</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>toggle physics</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>gravity</Name>
+    <Value>2.336956501</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mRadius</Name>
+    <Value>90.380432129</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>drag</Name>
+    <Value>0.924673915</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mRange</Name>
+    <Value>55.211956024</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mIntensity</Name>
+    <Value>109.478256226</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>strength</Name>
+    <Value>0.440777183</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>rest length</Name>
+    <Value>158.152175903</Value>
+</Widget>

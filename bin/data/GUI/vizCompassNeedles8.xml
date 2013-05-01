@@ -1,0 +1,85 @@
+<Widget>
+    <Kind>4</Kind>
+    <Name>select preset</Name>
+    <Value>8.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>toggle idle</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>idle rotation</Name>
+    <Value>52.826084137</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>blend add</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>alpha</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>needle width</Name>
+    <Value>5.875000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>needle height</Name>
+    <Value>22.038042068</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>needle offset x</Name>
+    <Value>-25.543478012</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>ease</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>constrain</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>grid width</Name>
+    <Value>4000.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>grid height</Name>
+    <Value>1573.913085938</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>line offset</Name>
+    <Value>3.913043976</Value>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>color</Name>
+    <XValue>0.858024716</XValue>
+    <YValue>0.395061731</YValue>
+    <RColor>186</RColor>
+    <GColor>255</GColor>
+    <BColor>208</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>bg color</Name>
+    <XValue>0.000000000</XValue>
+    <YValue>0.580246925</YValue>
+    <RColor>0</RColor>
+    <GColor>1</GColor>
+    <BColor>2</BColor>
+    <AColor>255</AColor>
+</Widget>

@@ -1,0 +1,30 @@
+<Widget>
+    <Kind>28</Kind>
+    <Name>mBgColor</Name>
+    <XValue>0.000000000</XValue>
+    <YValue>0.716049373</YValue>
+    <RColor>1</RColor>
+    <GColor>0</GColor>
+    <BColor>2</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mStripeOutsideColor</Name>
+    <XValue>0.481481493</XValue>
+    <YValue>0.000000000</YValue>
+    <RColor>246</RColor>
+    <GColor>1</GColor>
+    <BColor>0</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mStripeInsideColor</Name>
+    <XValue>1.000000000</XValue>
+    <YValue>1.000000000</YValue>
+    <RColor>254</RColor>
+    <GColor>254</GColor>
+    <BColor>254</BColor>
+    <AColor>255</AColor>
+</Widget>

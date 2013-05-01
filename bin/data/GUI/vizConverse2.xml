@@ -1,0 +1,125 @@
+<Widget>
+    <Kind>4</Kind>
+    <Name>select preset</Name>
+    <Value>2.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbCamTop</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mCamTopY</Name>
+    <Value>-1525.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleShape</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleOverlayImage</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleOverlayMovie</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mCamRotZ</Name>
+    <Value>270.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mCamRotY</Name>
+    <Value>90.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mCamRotX</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mOuterStripeRadiusMin</Name>
+    <Value>576.086914062</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mOuterStripeRadiusMax</Name>
+    <Value>1.847826004</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mInnerStripeRadiusMin</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mInnerStripeRadiusMax</Name>
+    <Value>0.217391014</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSecondRingRadiusMin</Name>
+    <Value>125.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSecondRingRadiusMax</Name>
+    <Value>-8.260869980</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mOuterStripeThickness</Name>
+    <Value>12.071195602</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mInnerStripeThickness</Name>
+    <Value>21.361576080</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSecondRingStripeThickness</Name>
+    <Value>17.449836731</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mOffset</Name>
+    <Value>259.239135742</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mSecondRingOffsetAngle</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mStripeOffsetAngle</Name>
+    <Value>-3.521739006</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mStripeOffset</Name>
+    <Value>0.703913033</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleCamRot</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mRange</Name>
+    <Value>94.244567871</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mIntensity</Name>
+    <Value>57.951087952</Value>
+</Widget>

@@ -1,0 +1,40 @@
+<Widget>
+    <Kind>4</Kind>
+    <Name>select preset</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>blend add</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>alpha</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>dot width</Name>
+    <Value>170.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>dot height</Name>
+    <Value>192.750015259</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>dot offset x</Name>
+    <Value>12.500000000</Value>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>SAMPLER</Name>
+    <XValue>1.000000000</XValue>
+    <YValue>0.419753075</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>

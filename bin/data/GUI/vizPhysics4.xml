@@ -1,0 +1,105 @@
+<Widget>
+    <Kind>4</Kind>
+    <Name>select preset</Name>
+    <Value>4.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbCamTop</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mCamTopY</Name>
+    <Value>-833.152160645</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleShader</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbPerVertexUVs</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleLighting</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbTogglePointLight</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleSpotLight</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>mbToggleSpotLightMouse</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mBoxSize</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mForceRadius</Name>
+    <Value>116.375000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mForceStrength</Name>
+    <Value>157.608703613</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>gravity</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>drag</Name>
+    <Value>0.935434818</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mPointLightPosX</Name>
+    <Value>-69.565185547</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mPointLightPosY</Name>
+    <Value>-400.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>mPointLightPosZ</Name>
+    <Value>-400.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mPointLightDiffuseColor</Name>
+    <XValue>1.000000000</XValue>
+    <YValue>0.555555582</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
+<Widget>
+    <Kind>28</Kind>
+    <Name>mPointLightSpecularColor</Name>
+    <XValue>1.000000000</XValue>
+    <YValue>0.753086448</YValue>
+    <RColor>255</RColor>
+    <GColor>255</GColor>
+    <BColor>255</BColor>
+    <AColor>255</AColor>
+</Widget>
