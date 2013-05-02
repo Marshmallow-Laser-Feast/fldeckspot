@@ -327,7 +327,8 @@ void testApp::update(){
      */
     if(mbMainVideo) {
         mCurrentFrame = mainVideo.getCurrentFrame();
-        if (mainVideo.isPlaying())   movieSlider->setValue(mCurrentFrame);
+        //if (mainVideo.isPlaying())
+            movieSlider->setValue(mCurrentFrame);
         
         if     (ofInRange(mCurrentFrame, mSceneCues[1], mSceneCues[2])) setMode(kModeNikeBeats);
         else if(ofInRange(mCurrentFrame, mSceneCues[2], mSceneCues[3])) setMode(kModeNikeTune);
